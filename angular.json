@@ -30,14 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "node_modules/tailwindcss/components.css",
+              "node_modules/tailwindcss/utilities.css",
+              "node_modules/tailwindcss/tailwind.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/tailwindcss/base.css",
-              "node_modules/tailwindcss/components.css",
-              "node_modules/tailwindcss/utilities.css",
-              "node_modules/tailwindcss/tailwind.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
