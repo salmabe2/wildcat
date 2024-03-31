@@ -1,0 +1,11 @@
+<h1 class="my-4 text-3xl font-bold">Áreas de Estudio</h1>
+
+<div class="table-wrapper">
+  <ui-table [tableColumns]="tableColumns" [items]="studyAreas">
+    <tr *ngFor="let studyArea of studyAreas" class="rowTemplate">
+      <td>{{ studyArea.name }}</td>
+      <td>{{ studyArea.cats_num }}</td>
+      <td><button class="px-2 py-1 text-sm text-white rounded bg-primary" [routerLink]="['/study-areas/' + studyArea.id]">Ver</button></td>
+    </tr>
+  </ui-table>
+</div>
