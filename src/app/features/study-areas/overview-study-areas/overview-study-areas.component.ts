@@ -15,6 +15,7 @@ import { TableColumn } from '@wildcat/shared/interfaces';
   imports: [TableComponent, CommonModule, RouterModule]
 })
 export class OverviewStudyAreasComponent {
+  // TODO: Get data from external file
   studyAreas: StudyArea[] = [
     { id: 1, name: 'Madrid', presence: 10, absence: 20, region: 'Comunidad de Madrid', coords: '23 45' }
   ];
