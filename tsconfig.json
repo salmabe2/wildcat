@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,7 +22,13 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@wildcat/interfaces": ["src/app/core/interfaces/index.ts"],
+      "@wildcat/shared/components": ["src/app/shared/components/index.ts"],
+      "@wildcat/shared/interfaces": ["src/app/shared/interfaces/index.ts"],
+
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
