@@ -1,8 +1,8 @@
 :host {
   .content-wrapper {
-		@apply pt-[59px];
+		@apply pt-[59px] bg-gray-100 min-h-screen ;
     .content {
-			@apply h-full px-4 py-4 max-w-[1800px] mx-auto;
+			@apply h-full px-12 py-4 max-w-[1800px] mx-auto;
     }
   }
 }
