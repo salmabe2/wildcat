@@ -1,4 +1,7 @@
 :host ::ng-deep {
+  p-menubar .p-menubar {
+    z-index: 9999999;
+  }
   p-menubar .p-menubar.p-component {
     @apply bg-primary-1 rounded-none fixed w-full;
     .p-menuitem-link .p-menuitem-text,
@@ -8,7 +11,9 @@
     }
   }
 
-  .p-menubar .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content:not(:hover) {
+  .p-menubar
+    .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus
+    > .p-menuitem-content:not(:hover) {
     @apply bg-primary-1;
   }
 

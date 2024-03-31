@@ -25,7 +25,8 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'Áreas de estudio',
-        icon: 'pi pi-fw pi-user'
+        icon: 'pi pi-fw pi-user',
+        routerLink: '/study-areas'
       },
       {
         label: 'Publicaciones',
