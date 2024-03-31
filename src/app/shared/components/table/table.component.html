@@ -1,0 +1,10 @@
+<p-table [value]="items">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let item of tableColumns">{{ item.label }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+      <ng-content select=".rowTemplate"></ng-content>
+  </ng-template>
+</p-table>

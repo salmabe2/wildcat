@@ -1,0 +1,23 @@
+:host ::ng-deep {
+  .p-datatable-wrapper {
+    @apply rounded border-gray-200 border-solid border;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  .p-datatable {
+    tr:nth-child(odd) {
+      background-color: #f2f2f2; /* Light grey */
+    }
+  }
+
+  .p-datatable .p-datatable-thead {
+    @apply border-b-2;
+    tr > th {
+      @apply bg-gray-200;
+    }
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td,
+  .p-datatable .p-datatable-thead > tr > th {
+    @apply p-2;
+  }
+}
