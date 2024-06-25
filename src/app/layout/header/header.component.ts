@@ -24,8 +24,9 @@ export class HeaderComponent implements OnInit {
         command: () => this.navigateToSection('about')
       },
       {
-        label: 'Equipos',
-        icon: 'pi pi-fw pi-pencil'
+        label: 'Bloques',
+        icon: 'pi pi-fw pi-pencil',
+        routerLink: '/blocks'
       },
       {
         label: 'Áreas de estudio',
