@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,14 @@ import { ButtonModule } from 'primeng/button';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] | undefined;
 
+  @Input() transparent: boolean = false;
+  constructor(private router: Router) {}
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Sobre nosotros',
-        icon: 'pi pi-fw pi-file'
+        label: 'Sobre el proyecto',
+        icon: 'pi pi-fw pi-file',
+        command: () => this.navigateToSection('about')
       },
       {
         label: 'Equipos',
@@ -47,5 +51,9 @@ export class HeaderComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  navigateToSection(fragment: string): void {
+    this.router.navigate(['/home'], { fragment }); // Navigate to /home#fragment
   }
 }

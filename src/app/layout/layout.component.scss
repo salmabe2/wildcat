@@ -1,0 +1,9 @@
+:host {
+    .content-wrapper {
+        @apply mt-[60px];
+        .content {
+            @apply h-full overflow-y-auto px-[34px] mx-auto max-w-[1800px] py-4;
+        }
+    }
+
+}

@@ -3,7 +3,7 @@
     z-index: 9999999;
   }
   p-menubar .p-menubar.p-component {
-    @apply bg-primary-1 rounded-none fixed w-full;
+    @apply bg-primary-1 rounded-none fixed w-full top-0;
     .p-menuitem-link .p-menuitem-text,
     .p-menuitem-link .p-menuitem-icon,
     .p-menuitem-link angledownicon svg {
