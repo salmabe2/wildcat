@@ -1,0 +1,6 @@
+/* This SCSS file is intended to resolve conflicts between PrimeNG and TailwindCSS. 
+If these issues are addressed in a future update, we can remove this file. */
+
+.p-icon-field-left > .p-inputtext {
+    padding-left: 2.5rem;
+}
