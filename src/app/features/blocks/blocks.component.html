@@ -1,0 +1,17 @@
+<div class="my-4">
+    <p-iconField iconPosition="left">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input class="input" type="text" pInputText [(ngModel)]="searchInputText" (ngModelChange)="searchBlocks()" placeholder="Buscar bloques" />
+        <!-- <input type="text" pInputText placeholder="Search" /> -->
+
+    </p-iconField>
+</div>
+<div class="grid grid-cols-2 gap-2">
+    <div *ngFor="let item of blocksDataFiltered" class="h-full">
+        <p-card [header]="item.block" styleClass="h-full">
+            <p *ngFor="let member of item.members">
+                <span class="font-bold">{{ member.name }} </span><span *ngIf="member.email"> - {{ member.email }} </span>
+            </p>
+        </p-card>
+    </div>
+</div>

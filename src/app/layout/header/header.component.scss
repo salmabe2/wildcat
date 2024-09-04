@@ -1,0 +1,28 @@
+:host ::ng-deep {
+  p-menubar .p-menubar {
+    z-index: 9999999;
+  }
+  p-menubar .p-menubar.p-component {
+    @apply bg-primary-1 rounded-none fixed w-full top-0;
+    .p-menuitem-link .p-menuitem-text,
+    .p-menuitem-link .p-menuitem-icon,
+    .p-menuitem-link angledownicon svg {
+      @apply text-light;
+    }
+  }
+
+  .p-menubar
+    .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus
+    > .p-menuitem-content:not(:hover) {
+    @apply bg-primary-1;
+  }
+
+  .p-menubar .p-menuitem.p-highlight > .p-menuitem-content,
+  .p-menuitem-content:hover {
+    @apply bg-primary-2;
+  }
+
+  .p-submenu-list {
+    @apply bg-primary-1;
+  }
+}

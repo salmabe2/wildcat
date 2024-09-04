@@ -1,0 +1,13 @@
+$primary_color: #a3b18a;
+$primary_color_tint_1: #588157;
+$primary_color_tint_2: #3a5a40;
+$light_color: #dad7cd;
+$dark_color: #25372e;
+
+:root {
+  --primary_color: #{$primary_color};
+  --primary_color_tint_1: #{$primary_color_tint_1};
+  --primary_color_tint_2: #{$primary_color_tint_2};
+  --light_color: #{$light_color};
+  --dark_color: #{$dark_color};
+}
