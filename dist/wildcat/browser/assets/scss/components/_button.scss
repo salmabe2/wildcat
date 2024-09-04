@@ -1,0 +1,14 @@
+.p-button {
+  @apply border-solid border font-bold px-4 py-2 rounded;
+  &.primary {
+    @apply bg-primary text-white border-primary;
+
+    &:hover:not(:disabled) {
+        @apply bg-primary-2 border-primary-2;
+      }
+  }
+
+  &:focus {
+    @apply shadow-none;
+  }
+}
