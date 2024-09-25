@@ -1,9 +1,8 @@
 :host {
-    .content-wrapper {
-        @apply mt-[60px];
-        .content {
-            @apply h-full overflow-y-auto px-[34px] mx-auto max-w-[1800px] py-4;
-        }
-    }
-
+	.content-wrapper {
+		@apply pt-[60px] h-screen bg-gray-100;
+		.content {
+			@apply h-full overflow-y-auto px-[34px] mx-auto max-w-[1800px] py-4;
+		}
+	}
 }

@@ -1,0 +1,31 @@
+:host {
+	::ng-deep {
+		.p-card {
+			@apply h-full rounded cursor-pointer;
+			@apply transition ease-in-out delay-100;
+
+			&:hover {
+				@apply drop-shadow-lg scale-105 border-2 border-primary-2;
+				.p-card-title {
+					@apply underline;
+				}
+			}
+
+			.p-card-content {
+				@apply p-0;
+			}
+
+			.p-card-title {
+				@apply text-lg;
+			}
+
+			.p-card-subtitle {
+				@apply text-balance;
+			}
+
+			.p-card-footer {
+				@apply flex justify-center p-0;
+			}
+		}
+	}
+}

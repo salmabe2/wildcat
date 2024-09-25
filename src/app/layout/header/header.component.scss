@@ -1,5 +1,6 @@
 :host ::ng-deep {
   p-menubar .p-menubar {
+    @apply border-none;
     z-index: 9999999;
   }
   p-menubar .p-menubar.p-component {

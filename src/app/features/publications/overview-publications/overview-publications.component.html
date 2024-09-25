@@ -1,8 +1,33 @@
-<!-- TODO: Add tabs for each post type -->
-<div class="flex flex-wrap gap-3">
-    <div *ngFor="let post of postsData" class="w-72 h-70">
-        <p-card [header]="post.title" styleClass="w-72 h-70">
-            <div>{{ post.descriptionOverview }}</div>
-        </p-card>
-    </div>
+<p-tabMenu
+	styleClass="mb-4"
+	[model]="tabMenuModel"
+	[activeItem]="tabMenuModel[0]"
+	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
+<div class="grid grid-cols-3 gap-6 mb-6">
+	<div
+		*ngFor="let post of filteredPostsData"
+		class="post-wrapper">
+		<a
+			[href]="post.src"
+			target="_blank"
+			rel="noopener noreferrer">
+			<p-card
+				[header]="post.title"
+				[subheader]="post.subtitle"
+				styleClass="w-full h-full">
+				<ng-template pTemplate="header">
+					<img
+						*ngIf="post.img"
+						class="rounded-t"
+						alt="Card"
+						[src]="post.img" />
+				</ng-template>
+				<div
+					class="py-1"
+					*ngIf="post.descriptionOverview">
+					{{ post.descriptionOverview }}
+				</div>
+			</p-card>
+		</a>
+	</div>
 </div>
