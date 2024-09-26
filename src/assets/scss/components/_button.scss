@@ -1,14 +1,25 @@
 .p-button {
-  @apply border-solid border font-bold px-4 py-2 rounded;
+  @apply border-solid border font-bold rounded;
+
   &.primary {
     @apply bg-primary text-white border-primary;
 
     &:hover:not(:disabled) {
-        @apply bg-primary-2 border-primary-2;
-      }
+      @apply bg-primary-2 border-primary-2;
+    }
   }
 
   &:focus {
     @apply shadow-none;
   }
+}
+
+// Size small
+.p-button.p-button-sm {
+  padding: 0.2rem 0.875rem;
+}
+
+// Primary button
+.p-button.primary {
+  @apply bg-primary border-primary;
 }
