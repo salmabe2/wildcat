@@ -1,4 +1,22 @@
-<p-table [value]="items">
+<p-table
+	[value]="items"
+	#pTable>
+	<!-- <ng-template pTemplate="caption">
+		<div class="flex">
+			<p-iconField
+				iconPosition="left"
+				class="ml-auto">
+				<p-inputIcon>
+					<i class="pi pi-search"></i>
+				</p-inputIcon>
+				<input
+					pInputText
+					type="text"
+					(input)="pTable.filterGlobal(items, 'contains')"
+					placeholder="Search keyword" />
+			</p-iconField>
+		</div>
+	</ng-template> -->
 	<ng-template pTemplate="header">
 		<tr>
 			<th
@@ -11,6 +29,7 @@
 	<ng-template
 		pTemplate="body"
 		let-item>
-		<ng-content select=".rowTemplate"></ng-content>
+		<ng-container *ngTemplateOutlet="rowTemplate; context: { $implicit: item }">
+		</ng-container>
 	</ng-template>
 </p-table>

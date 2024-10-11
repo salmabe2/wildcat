@@ -32,83 +32,84 @@ export class BlocksComponent implements OnInit {
 		{ field: 'block', label: 'Bloque', class: 'w-1/2' }
 	];
 
-  membersData = [
-    {
-      name: 'Pedro Luis Ramos Bueno',
-      blocks:
-        'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), Dehesas Larrodrigo-río Gamo (SA-AV), La Serrezuela (SA)-Valle del Corneja (AV), Arribes Duero-Águeda (SA)',
-        email: 'pedroluis.ramos@jcyl.es'
-    },
-    {
-      name: 'Enrique Vicente Mangas',
-      blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
-    },
-    {
-      name: 'Juan Manuel Gonzalez Sanchez',
-      blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
-    },
-    {
-      name: 'Susana Comunas Sanchez',
-      blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
-    },
-    {
-      name: 'Miguel Angel Gonzalez Samaniego',
-      blocks:
-        'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), La Serrezuela (SA)-Valle del Corneja (AV)'
-    },
-    {
-      name: 'Javier Cruz Rubio',
-      blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
-    },
-    {
-      name: 'Juan Ramon Rguez Sanchez',
-      blocks:
-        'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), Dehesas Larrodrigo-río Gamo (SA-AV)'
-    },
-    {
-      name: 'Javier Pedraza Ovejero',
-      blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
-    },
-    {
-      name: 'Ángel García Sánchez',
-      blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
-    },
-    {
-      name: 'Adolfo M. Rodríguez Cuesta',
-      blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
-    },
-    {
-      name: 'Gustavo Merchan Criado',
-      blocks: 'La Serrezuela (SA)-Valle del Corneja (AV)'
-    },
-    {
-      name: 'Roberto Carbonell Alanis',
-      blocks: 'El Rebollar (SA), Arribes Duero-Águeda (SA)',
-      email: 'roberto.carbonell@patrimonionatural.org'
-    },
-    {
-      name: 'David Martín López',
-      blocks: 'El Rebollar (SA)'
-    },
-    {
-      name: 'Ramón Román Hdez.',
-      blocks: 'El Rebollar (SA)'
-    },
-    {
-      name: 'Rodrigo Pascual Sánchez',
-      blocks: 'Arribes Duero-Águeda (SA)'
-    },
-    {
-      name: 'Carlos Sánchez Marcos',
-      blocks: 'Arribes Duero-Águeda (SA)'
-    },
-    {
-      name: 'Alfonso Moreno Cillero',
-      blocks: 'Arribes Duero-Águeda (SA)'
-    }
-  ];
+	membersData = [
+		{
+			name: 'Pedro Luis Ramos Bueno',
+			blocks:
+				'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), Dehesas Larrodrigo-río Gamo (SA-AV), La Serrezuela (SA)-Valle del Corneja (AV), Arribes Duero-Águeda (SA)',
+			email: 'pedroluis.ramos@jcyl.es'
+		},
+		{
+			name: 'Enrique Vicente Mangas',
+			blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
+		},
+		{
+			name: 'Juan Manuel Gonzalez Sanchez',
+			blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
+		},
+		{
+			name: 'Susana Comunas Sanchez',
+			blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
+		},
+		{
+			name: 'Miguel Angel Gonzalez Samaniego',
+			blocks:
+				'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), La Serrezuela (SA)-Valle del Corneja (AV)'
+		},
+		{
+			name: 'Javier Cruz Rubio',
+			blocks: 'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA)'
+		},
+		{
+			name: 'Juan Ramon Rguez Sanchez',
+			blocks:
+				'Alcornocales de Valdelosa (SA)-Cubo del Vino (ZA), Dehesas Larrodrigo-río Gamo (SA-AV)'
+		},
+		{
+			name: 'Javier Pedraza Ovejero',
+			blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
+		},
+		{
+			name: 'Ángel García Sánchez',
+			blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
+		},
+		{
+			name: 'Adolfo M. Rodríguez Cuesta',
+			blocks: 'Dehesas Larrodrigo-río Gamo (SA-AV)'
+		},
+		{
+			name: 'Gustavo Merchan Criado',
+			blocks: 'La Serrezuela (SA)-Valle del Corneja (AV)'
+		},
+		{
+			name: 'Roberto Carbonell Alanis',
+			blocks: 'El Rebollar (SA), Arribes Duero-Águeda (SA)',
+			email: 'roberto.carbonell@patrimonionatural.org'
+		},
+		{
+			name: 'David Martín López',
+			blocks: 'El Rebollar (SA)'
+		},
+		{
+			name: 'Ramón Román Hdez.',
+			blocks: 'El Rebollar (SA)'
+		},
+		{
+			name: 'Rodrigo Pascual Sánchez',
+			blocks: 'Arribes Duero-Águeda (SA)'
+		},
+		{
+			name: 'Carlos Sánchez Marcos',
+			blocks: 'Arribes Duero-Águeda (SA)'
+		},
+		{
+			name: 'Alfonso Moreno Cillero',
+			blocks: 'Arribes Duero-Águeda (SA)'
+		}
+	]; // TODO: Move data to another file
 
-	// TODO: Move data to another file
+	filteredMembersData = this.membersData; // TODO: fix this
+
 	blocksData = [
 		{
 			block: 'Daniel Fernández Alonso',
@@ -265,23 +266,35 @@ export class BlocksComponent implements OnInit {
 				{ name: 'Félix Martínez Olivas', email: '' }
 			]
 		}
-	];
-	// TODO: fix this
-	blocksDataFiltered = this.blocksData;
+	]; // TODO: remove
+
+	blocksDataFiltered = this.blocksData; // TODO: remove
 
 	searchInputText: string = '';
+	searchTimeout: any;
 
 	ngOnInit(): void {
-		this.blocksDataFiltered = this.blocksData;
+		this.blocksDataFiltered = this.blocksData; // TODO: remove
+		this.filteredMembersData = this.membersData;
+	}
+
+	onSearch() {
+		window.clearTimeout(this.searchTimeout);
+		this.searchTimeout = window.setTimeout(() => this.searchBlocks(), 400);
 	}
 
 	searchBlocks() {
+		const searchText = this.searchInputText.toLowerCase();
 		if (this.searchInputText) {
-			this.blocksDataFiltered = this.blocksData.filter((block) => {
-				return block.block.includes(this.searchInputText);
+			this.filteredMembersData = this.membersData.filter((member) => {
+				return (
+					member.blocks.toLowerCase().includes(searchText) ||
+					member.name.toLowerCase().includes(searchText)
+				);
 			});
 		} else {
-			this.blocksDataFiltered = this.blocksData;
+			// TODO: orden alfabético
+			this.filteredMembersData = this.membersData;
 		}
 	}
 }
