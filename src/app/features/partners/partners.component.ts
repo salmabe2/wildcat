@@ -23,10 +23,10 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 		TagModule,
 		TableComponent
 	],
-	templateUrl: './blocks.component.html',
-	styleUrl: './blocks.component.scss'
+	templateUrl: './partners.component.html',
+	styleUrl: './partners.component.scss'
 })
-export class BlocksComponent implements OnInit {
+export class PartnersComponent implements OnInit {
 	tableColumns: TableColumn[] = [
 		{ field: 'name', label: 'Nombre' },
 		{ field: 'block', label: 'Bloque', class: 'w-1/2' }
