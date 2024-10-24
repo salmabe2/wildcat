@@ -9,6 +9,7 @@ import { TagModule } from 'primeng/tag';
 
 import { TableComponent } from '@wildcat/shared/components';
 import { TableColumn } from '@wildcat/shared/interfaces';
+import { Partner } from '@wildcat/interfaces';
 
 @Component({
 	selector: 'app-blocks',
@@ -32,7 +33,7 @@ export class PartnersComponent implements OnInit {
 		{ field: 'block', label: 'Bloque', class: 'w-1/2' }
 	];
 
-	membersData = [
+	partnersData: Partner[] = [
 		{
 			name: 'Pedro Luis Ramos Bueno',
 			blocks:
@@ -108,7 +109,7 @@ export class PartnersComponent implements OnInit {
 		}
 	]; // TODO: Move data to another file
 
-	filteredMembersData = this.membersData; // TODO: fix this
+	filteredMembersData = this.partnersData; // TODO: fix this
 
 	blocksData = [
 		{
@@ -275,7 +276,7 @@ export class PartnersComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.blocksDataFiltered = this.blocksData; // TODO: remove
-		this.filteredMembersData = this.membersData;
+		this.filteredMembersData = this.partnersData;
 	}
 
 	onSearch() {
@@ -286,15 +287,15 @@ export class PartnersComponent implements OnInit {
 	searchBlocks() {
 		const searchText = this.searchInputText.toLowerCase();
 		if (this.searchInputText) {
-			this.filteredMembersData = this.membersData.filter((member) => {
+			this.filteredMembersData = this.partnersData.filter((partner) => {
 				return (
-					member.blocks.toLowerCase().includes(searchText) ||
-					member.name.toLowerCase().includes(searchText)
+					partner.blocks.toLowerCase().includes(searchText) ||
+					partner.name.toLowerCase().includes(searchText)
 				);
 			});
 		} else {
 			// TODO: orden alfabético
-			this.filteredMembersData = this.membersData;
+			this.filteredMembersData = this.partnersData;
 		}
 	}
 }

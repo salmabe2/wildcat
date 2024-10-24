@@ -18,17 +18,17 @@
 
 <ng-template
 	#rowTemplate
-	let-member>
+	let-partner>
 	<tr>
 		<td class="font-bold">
-			{{ member.name }}
+			{{ partner.name }}
 			<p-tag
 				class="email-tag"
-				*ngIf="member.email"
+				*ngIf="partner.email"
 				icon="pi pi-user"
-				[value]="member.email">
+				[value]="partner.email">
 			</p-tag>
 		</td>
-		<td>{{ member.blocks }}</td>
+		<td>{{ partner.blocks }}</td>
 	</tr>
 </ng-template>
