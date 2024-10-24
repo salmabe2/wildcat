@@ -25,6 +25,7 @@
     ],
     "paths": {
       "@wildcat/interfaces": ["src/app/core/interfaces/index.ts"],
+      "@wildcat/services": ["src/app/core/services/index.ts"],
       "@wildcat/shared/components": ["src/app/shared/components/index.ts"],
       "@wildcat/shared/interfaces": ["src/app/shared/interfaces/index.ts"],
 
