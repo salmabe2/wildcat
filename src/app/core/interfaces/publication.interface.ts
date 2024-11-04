@@ -7,6 +7,7 @@ export interface Publication {
 	img?: string;
 	imgInfo?: string;
 	description?: string;
+	video?: boolean;
 }
 
 export type PublicationType = 'news' | 'project' | 'science';

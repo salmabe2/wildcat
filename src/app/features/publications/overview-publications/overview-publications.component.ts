@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { TabMenuModule } from 'primeng/tabmenu';
@@ -14,13 +14,13 @@ import { Publication, PublicationType } from '@wildcat/interfaces';
 	templateUrl: './overview-publications.component.html',
 	styleUrl: './overview-publications.component.scss'
 })
-export class OverviewPublicationsComponent {
+export class OverviewPublicationsComponent implements OnInit {
 	constructor(private publicationService: PublicationService) {}
 
 	tabMenuModel: MenuItem[] = [
 		{ label: 'Todos', id: 'all' },
 		{ label: 'Proyecto', id: 'project' },
-		{ label: 'Científicas', id: 'science' },
+		// { label: 'Científicas', id: 'science' },
 		{ label: 'Noticias', id: 'news' }
 	];
 
@@ -34,6 +34,8 @@ export class OverviewPublicationsComponent {
 		this.postsData =
 			$event.id === 'all'
 				? this.postsData
-				: this.publicationService.getPublicationsByType($event.id as PublicationType);
+				: this.publicationService.getPublicationsByType(
+						$event.id as PublicationType
+					);
 	}
 }

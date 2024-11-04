@@ -138,7 +138,7 @@ export class PublicationService {
 			type: 'news',
 			src: 'https://www.madrimasd.org/gato-montes-peninsula-iberica-en-peligro-extincion',
 			img: 'https://www.madrimasd.org/sites/default/files/Noti_14_17_23.png'
-		}
+		},
 		// {
 		// No funciona bien la página
 		// 	date: new Date('2024-05-09'),
@@ -149,6 +149,111 @@ export class PublicationService {
 		// 	src: 'https://www.laverdad.es/nuestra-tierra/naturaleza/gato-montes-peor-20230509012848-nt.html',
 		// 	img: 'https://www.laverdad.es/images/gato-montes.jpg'
 		// }
+		{
+			date: new Date('2023-03-13'),
+			title:
+				'I Reunión de especialistas sobre gato montés de la Península Ibérica',
+			subtitle:
+				'La alarmante situación del gato montés en la Península Ibérica motiva a los expertos a trabajar de forma conjunta para establecer una hoja de ruta que contribuya a revertir la “extinción silenciosa” de la especie en la mayor parte de Iberia',
+			type: 'news',
+			src: 'https://www.irec.es/noticias/reunion-especialistas-gato-montes-peninsula-iberica/',
+			img: 'https://www.irec.es/wp-content/uploads/2023/03/Gato-montes_Felis-silvestris.jpeg',
+			imgInfo: 'Foto: François Mougeot'
+		},
+		{
+			date: new Date('2023-04-14'),
+			title:
+				'El gato montés de la Península Ibérica, ¿en peligro de extinción?',
+			subtitle:
+				'Un grupo de especialistas en este pequeño felino ha evaluado la situación de esta especie para establecer un plan de acción para su protección y conservación.',
+			type: 'news',
+			src: 'https://www.urjc.es/todas-las-noticias-de-actualidad-cientifica/7979-el-gato-montes-de-la-peninsula-iberica-en-peligro-de-extincion',
+			img: 'https://www.urjc.es/media/k2/items/cache/045ca9baa9bd3c77535e15c8d834aea0_M.jpg',
+			imgInfo:
+				'Foto: Gato montés. Autores: Jose María Gil-Sánchez y Mariola Sánchez-Cerdá'
+		},
+		{
+			date: new Date('2023-05-05'),
+			title:
+				'El gato montés, en situación de "preextinción" en la Península Ibérica',
+			subtitle:
+				'Fragmentación extrema y baja densidad de sus poblaciones amenazan seriamente a este felino',
+			type: 'news',
+			src: 'https://www.elperiodico.com/es/medio-ambiente/20230505/gato-montes-situacion-preextincion-peninsula-86381328',
+			img: 'https://estaticos-cdn.prensaiberica.es/clip/539fd2d9-3b06-401d-a44c-7fac917a34de_16-9-discover-aspect-ratio_default_0.webp',
+			imgInfo:
+				'El gato montes de la peninsula iberica, en peligro de extincion / Pixabay'
+		},
+		{
+			date: new Date('2023-04-17'),
+			title: 'El gato montés de la península ibérica ¿en peligro de extinción?',
+			description:
+				'Un grupo de especialistas en felinos evalúa la situación del felino en la Península, con el objetivo de establecer un plan de acción para su protección y conservación. En el norte y el noreste, la especie está aparentemente bien distribuida, mientras en el sur y el centro existe poca densidad, con una fragmentación extrema.',
+			type: 'news',
+			src: 'https://www.lasexta.com/tecnologia-tecnoxplora/sinc/gato-montes-peninsula-iberica-peligro-extincion_20230417643d392e2f8deb0001547c51.html',
+			img: 'https://fotografias.lasexta.com/clipping/cmsimages01/2023/04/17/96081322-2BC5-4C28-B76E-A487A05B1B1E/96.jpg?crop=1920,1080,x0,y101&width=1200&height=675&optimize=high&format=webply',
+			imgInfo: 'Imagen de un gato montés | Sinc'
+		},
+		{
+			date: new Date('2023-05-08'),
+			title: 'Seguimiento del gato montés en la península',
+			type: 'news',
+			src: 'https://www.youtube.com/watch?v=cMt4ceORXkw&ab_channel=EstaesmitierraAragonTV',
+			video: true
+		},
+		{
+			date: new Date('2024-01-15'),
+			title:
+				'Seguimiento de gato montés en P.N. Ordesa y Monte Perdido dentro del Censo de Gato Montés en España',
+			subtitle:
+				'Ponentes: Pilar Jimeno Brabo. Sociedad Aragonesa de Gestión Agroambiental (SARGA)',
+			type: 'project',
+			src: 'https://www.youtube.com/watch?v=h2c6flYPyjo&ab_channel=GobiernodeArag%C3%B3n',
+			video: true
+		},
+		{
+			date: new Date('2019-11-05'),
+			title: 'Censo del gato montés en la “Sierra de los Filabres” de Almería',
+			type: 'news',
+			src: 'https://www.youtube.com/watch?v=VNRPJ4icB4s&ab_channel=TierrayMar%26EspacioProtegidoCanalSur',
+			video: true
+		},
+		{
+			date: new Date('2024-04-06'),
+			title: 'El gato montés en la encrucijada',
+			subtitle:
+				'Mucho por aprender aún del gato montés : Algunas respuestas y muchos interrogantes',
+			type: 'news',
+			src: 'https://www.youtube.com/watch?v=cMt4ceORXkw&ab_channel=EstaesmitierraAragonTV',
+			img: 'https://www.terramirabile.org/wp-content/uploads/2024/04/Felix-silvestris-bv-Collado-JermosoIMG_4583-1536x1152.jpg',
+			imgInfo: 'Felis silvestris, Fotografía Luis Herrero',
+			video: true
+		},
+		{
+			date: new Date('2023-09-17'),
+			title: 'Almería, uno de los últimos reductos del gato montés en Andalucía',
+			subtitle:
+				'Serbal ha constatado la presencia de este felino en Los Filabres, Sierra de Gádor, Las Estancias y Sierra Alhamilla',
+			type: 'news',
+			src: 'https://www.diariodealmeria.es/almeria/Almeria-ultimos-reductos-gato-montes-Andalucia-video_0_1830117611.html',
+			img: 'https://static.grupojoly.com/clip/16ede387-7d07-4297-baee-66a68e181c53_16-9-aspect-ratio_1200w_0.webp',
+			imgInfo: 'Captura de una de las grabaciones del gato montés en la provincia de Almería. / José Miguel Gómez / Serbal',
+			video: true
+		},
+		{
+			date: new Date('2023-06-13'),
+			title: 'Quizá desaparezca el Gato Montés de nuestros campos, con Emilio Virgos #184',
+			type: 'news',
+			src: 'https://www.youtube.com/watch?v=TkhY7aZXrxs&ab_channel=Podcastidae-Reddepodcast',
+			video: true
+		},
+		{
+			date: new Date('2023-06-16'),
+			title: 'Episodio 8 El gato montés, invisible y amenazado',
+			type: 'news',
+			src: 'https://www.ivoox.com/episodio-8-el-gato-montes-invisible-amenazado-audios-mp3_rf_110561380_1.html',
+			video: true
+		}
 	];
 
 	/**
