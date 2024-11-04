@@ -1,14 +1,28 @@
 <h1 class="my-4 text-3xl font-bold">Áreas de Estudio</h1>
 
 <div class="table-wrapper">
-  <ui-table [tableColumns]="tableColumns" [items]="studyAreas">
-    <tr *ngFor="let studyArea of studyAreas" class="rowTemplate">
-      <td *ngIf="studyArea.name">{{ studyArea.name }}</td>
-      <td *ngIf="studyArea.presence">{{ studyArea.presence }}</td>
-      <td *ngIf="studyArea.absence">{{ studyArea.absence }}</td>
-      <td *ngIf="studyArea.region">{{ studyArea.region }}</td>
-      <td *ngIf="studyArea.coords">{{ studyArea.coords }}</td>
-      <td><button class="px-2 py-1 text-sm text-white rounded bg-primary" [routerLink]="['/study-areas/' + studyArea.id]">Ver</button></td>
-    </tr>
-  </ui-table>
+	<ui-table
+		[tableColumns]="tableColumns"
+		[items]="studyAreas"
+		[rowTemplate]="rowTemplate">
+	</ui-table>
 </div>
+
+<ng-template
+	#rowTemplate
+	let-studyArea>
+	<tr>
+		<td *ngIf="studyArea.name">{{ studyArea.name }}</td>
+		<td *ngIf="studyArea.presence">{{ studyArea.presence }}</td>
+		<td *ngIf="studyArea.absence">{{ studyArea.absence }}</td>
+		<td *ngIf="studyArea.region">{{ studyArea.region }}</td>
+		<td *ngIf="studyArea.coords">{{ studyArea.coords }}</td>
+		<td>
+			<button
+				class="px-2 py-1 text-sm text-white rounded bg-primary"
+				[routerLink]="['/study-areas/' + studyArea.id]">
+				Ver
+			</button>
+		</td>
+	</tr>
+</ng-template>
