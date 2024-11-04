@@ -5,7 +5,7 @@
 	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
 <div class="grid grid-cols-3 gap-6 mb-6">
 	<div
-		*ngFor="let post of filteredPostsData"
+		*ngFor="let post of postsData"
 		class="post-wrapper">
 		<a
 			[href]="post.src"
@@ -24,8 +24,8 @@
 				</ng-template>
 				<div
 					class="py-1"
-					*ngIf="post.descriptionOverview">
-					{{ post.descriptionOverview }}
+					*ngIf="post.description">
+					{{ post.description }}
 				</div>
 			</p-card>
 		</a>
