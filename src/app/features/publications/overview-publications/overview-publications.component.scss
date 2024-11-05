@@ -23,10 +23,10 @@
 						&::before {
 							content: '';
 							@apply w-0 h-0;
-							@apply min-[1800px]:border-l-[56px] min-[1800px]:border-y-[30px]; // @media (min-width: 1800px)
 							border-left: 3vw solid white; /* Triangle size based on viewport width */
 							border-top: 1.7vw solid transparent;
 							border-bottom: 1.7vw solid transparent;
+							@apply min-[1800px]:border-l-[56px] min-[1800px]:border-y-[30px]; // @media (min-width: 1800px)
 						}
 					}
 				}
