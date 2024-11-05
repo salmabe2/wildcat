@@ -1,10 +1,19 @@
 :host {
-  .img-header {
-    @apply items-center justify-center;
-    min-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-    background-image: url('https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg');
-    background-size: cover;
-  }
+	.wrapper {
+		@apply h-screen overflow-y-auto;
+
+		// Scrollbar
+		scrollbar-width: thin;
+		::-webkit-scrollbar-thumb {
+			@apply bg-gray-400;
+		}
+	}
+	.img-header {
+		@apply items-center justify-center;
+		min-width: 100%;
+		min-height: 100%;
+		max-height: 100%;
+		background-image: url('https://www.telemadrid.es/2023/09/04/medio-ambiente/_2593850683_42602664_1300x731.jpg');
+		background-size: cover;
+	}
 }

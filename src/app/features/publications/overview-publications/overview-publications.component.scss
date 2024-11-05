@@ -32,12 +32,8 @@
 				}
 			}
 
-			.p-card-body {
-				@apply h-full;
-			}
-
 			.p-card-content {
-				@apply p-0 flex-grow h-full;
+				@apply p-0 flex-grow;
 			}
 
 			.p-card-title {

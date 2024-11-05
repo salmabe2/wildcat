@@ -3,7 +3,7 @@
 	[model]="tabMenuModel"
 	[activeItem]="tabMenuModel[0]"
 	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
-<div class="grid grid-cols-3 gap-6 mb-6">
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 	<div
 		*ngFor="let post of postsData"
 		class="post-wrapper">
@@ -26,16 +26,15 @@
 						class="no-img-video">
 						<i class="pi pi-play"></i>
 					</div>
-
-					<div class="mt-4 ml-4"> 
+					<div class="mt-4 ml-4">
 						<p-tag
 							icon="pi pi-calendar"
+							class="pr-2"
 							styleClass="bg-primary"
 							[value]="post.date.toLocaleDateString('es-ES')">
 						</p-tag>
 						<p-tag
 							*ngIf="post.video"
-							class="pl-2"
 							icon="pi pi-video"
 							styleClass="bg-primary-2"
 							value="Multimedia">
