@@ -36,13 +36,13 @@ export class PartnersComponent implements OnInit {
 		{ field: 'block', label: 'Bloque', class: 'w-1/2' }
 	];
 
-	filteredPartnersData!: Partner[]; // TODO: fix this
+	partnersData!: Partner[];
 
 	searchInputText: string = '';
 	searchTimeout: any;
 
 	ngOnInit(): void {
-		this.filteredPartnersData = this.partnerService.partnersData;
+		this.partnersData = this.partnerService.partnersData;
 	}
 
 	onSearch() {
@@ -53,7 +53,7 @@ export class PartnersComponent implements OnInit {
 	searchBlocks() {
 		const searchText = this.searchInputText.toLowerCase();
 		if (this.searchInputText) {
-			this.filteredPartnersData = this.partnerService.partnersData.filter(
+			this.partnersData = this.partnerService.partnersData.filter(
 				(partner) => {
 					return (
 						partner.blocks.toLowerCase().includes(searchText) ||
@@ -62,7 +62,7 @@ export class PartnersComponent implements OnInit {
 				}
 			);
 		} else {
-			this.filteredPartnersData = this.partnerService.partnersData;
+			this.partnersData = this.partnerService.partnersData;
 		}
 	}
 }
