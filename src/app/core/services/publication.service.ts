@@ -231,18 +231,21 @@ export class PublicationService {
 		},
 		{
 			date: new Date('2023-09-17'),
-			title: 'Almería, uno de los últimos reductos del gato montés en Andalucía',
+			title:
+				'Almería, uno de los últimos reductos del gato montés en Andalucía',
 			subtitle:
 				'Serbal ha constatado la presencia de este felino en Los Filabres, Sierra de Gádor, Las Estancias y Sierra Alhamilla',
 			type: 'news',
 			src: 'https://www.diariodealmeria.es/almeria/Almeria-ultimos-reductos-gato-montes-Andalucia-video_0_1830117611.html',
 			img: 'https://static.grupojoly.com/clip/16ede387-7d07-4297-baee-66a68e181c53_16-9-aspect-ratio_1200w_0.webp',
-			imgInfo: 'Captura de una de las grabaciones del gato montés en la provincia de Almería. / José Miguel Gómez / Serbal',
+			imgInfo:
+				'Captura de una de las grabaciones del gato montés en la provincia de Almería. / José Miguel Gómez / Serbal',
 			video: true
 		},
 		{
 			date: new Date('2023-06-13'),
-			title: 'Quizá desaparezca el Gato Montés de nuestros campos, con Emilio Virgos #184',
+			title:
+				'Quizá desaparezca el Gato Montés de nuestros campos, con Emilio Virgos #184',
 			type: 'news',
 			src: 'https://www.youtube.com/watch?v=TkhY7aZXrxs&ab_channel=Podcastidae-Reddepodcast',
 			video: true
@@ -257,9 +260,21 @@ export class PublicationService {
 	];
 
 	/**
+	 * Retrieves a list of publications sorted by most recent date first.
+	 *
+	 * @returns {Array} Sorted list of publications by date in descending order.
+	 */
+	getPublications() {
+		return this.publicationsData.sort(
+			(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
+	}
+
+	/**
 	 * Filters publications data by type
 	 *
-	 * @param {PublicationType} postType.
+	 * @param {PublicationType} postType - The type of publication to filter by.
+	 * @returns {Array} Filtered list of publications matching the specified type.
 	 */
 	getPublicationsByType(postType: PublicationType) {
 		return this.publicationsData.filter((post) => {
