@@ -15,12 +15,10 @@ import { TagModule } from 'primeng/tag';
 	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-	showIndicatorsOnItem: boolean = false;
 	recentPosts!: Publication[];
 
 	constructor(
 		private route: ActivatedRoute,
-		private router: Router,
 		private publicationService: PublicationService
 	) {}
 
