@@ -20,22 +20,22 @@ export class HeaderComponent implements OnInit {
     this.items = [
       {
         label: 'Sobre el proyecto',
-        icon: 'pi pi-fw pi-file',
+        icon: 'pi pi-info-circle',
         command: () => this.navigateToSection('about')
       },
       {
         label: 'Colaboradores',
-        icon: 'pi pi-fw pi-pencil',
+        icon: 'pi pi-user',
         routerLink: '/partners'
       },
       {
         label: 'Áreas de estudio',
-        icon: 'pi pi-fw pi-user',
+        icon: 'pi pi-map-marker',
         routerLink: '/study-areas'
       },
       {
         label: 'Publicaciones',
-        icon: 'pi pi-fw pi-calendar',
+        icon: 'pi pi-file',
         routerLink: '/publications'
       }
     ];
