@@ -8,12 +8,95 @@
 			@apply bg-gray-400;
 		}
 	}
-	.img-header {
-		@apply items-center justify-center;
-		min-width: 100%;
-		min-height: 100%;
-		max-height: 100%;
-		background-image: url('https://www.telemadrid.es/2023/09/04/medio-ambiente/_2593850683_42602664_1300x731.jpg');
-		background-size: cover;
+
+	.header-section {
+		@apply relative flex flex-col items-center justify-center h-screen text-center text-white;
+
+		.img-header {
+			@apply items-center justify-center absolute top-0 left-0 flex w-full h-full overflow-hidden;
+			min-width: 100%;
+			min-height: 100%;
+			max-height: 100%;
+			background-image: url('https://www.telemadrid.es/2023/09/04/medio-ambiente/_2593850683_42602664_1300x731.jpg');
+			background-size: cover;
+		}
+
+		.title {
+			@apply text-4xl font-bold shadow-sm;
+		}
+	}
+
+	section:not(.header-section) {
+		@apply w-full py-16 px-[34px];
+		.content {
+			@apply max-w-[1800px] justify-self-center;
+		}
+	}
+
+	.about-section {
+		@apply bg-light;
+
+		.content {
+			@apply flex flex-col gap-4;
+		}
+	}
+
+	.publications-section {
+		@apply bg-gray-100;
+
+		button {
+			@apply px-8 py-2 mx-auto mt-6 text-xl font-bold text-white rounded bg-primary-1 hover:bg-primary-2;
+		}
+
+		::ng-deep {
+			.p-card {
+				@apply h-full rounded cursor-pointer;
+				@apply transition ease-in-out delay-100;
+
+				&:hover {
+					@apply drop-shadow-lg scale-105 border-2 border-primary-2;
+					.p-card-title {
+						@apply underline;
+					}
+				}
+
+				.p-card-header {
+					.no-img-video {
+						@apply text-center py-5 bg-light;
+						i {
+							@apply w-[10vw] h-[10vw] max-w-[150px] max-h-[150px] mx-auto pl-[1vw];
+							@apply flex items-center justify-center; // Align triangle in the center of the circle
+							@apply bg-primary-1 rounded-full;
+							transition: background-color 0.3s ease;
+
+							&::before {
+								content: '';
+								@apply w-0 h-0;
+								border-left: 3vw solid white; /* Triangle size based on viewport width */
+								border-top: 1.7vw solid transparent;
+								border-bottom: 1.7vw solid transparent;
+								@apply min-[1800px]:border-l-[56px] min-[1800px]:border-y-[30px]; // @media (min-width: 1800px)
+							}
+						}
+					}
+				}
+
+				.p-card-content {
+					@apply p-0 flex-grow;
+				}
+
+				.p-card-title {
+					@apply text-lg;
+				}
+
+				.p-card-subtitle {
+					@apply text-balance;
+				}
+
+				.p-card-footer {
+					@apply flex justify-center p-0;
+				}
+			}
+		}
 	}
 }

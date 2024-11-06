@@ -281,4 +281,14 @@ export class PublicationService {
 			return post?.type === postType;
 		});
 	}
+
+	/**
+	 * Retrives most recent publications
+	 *
+	 * @param {number} num - Number of recent publications to retrieve.
+	 * @returns {Array} List of recent publications.
+	 */
+	getRecentPublications(num: number) {
+		return this.getPublications().slice(0, num);
+	}
 }
