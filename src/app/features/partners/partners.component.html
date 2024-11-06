@@ -1,0 +1,34 @@
+<div class="my-4">
+	<p-iconField iconPosition="left">
+		<p-inputIcon styleClass="pi pi-search" />
+		<input
+			class="input"
+			type="text"
+			pInputText
+			[(ngModel)]="searchInputText"
+			(ngModelChange)="onSearch()"
+			placeholder="Buscar" />
+	</p-iconField>
+</div>
+<ui-table
+	[tableColumns]="tableColumns"
+	[items]="partnersData"
+	[rowTemplate]="rowTemplate">
+</ui-table>
+
+<ng-template
+	#rowTemplate
+	let-partner>
+	<tr>
+		<td class="font-bold">
+			{{ partner.name }}
+			<p-tag
+				class="email-tag"
+				*ngIf="partner.email"
+				icon="pi pi-user"
+				[value]="partner.email">
+			</p-tag>
+		</td>
+		<td>{{ partner.blocks }}</td>
+	</tr>
+</ng-template>

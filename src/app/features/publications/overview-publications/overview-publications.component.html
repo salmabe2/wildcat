@@ -3,9 +3,9 @@
 	[model]="tabMenuModel"
 	[activeItem]="tabMenuModel[0]"
 	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
-<div class="grid grid-cols-3 gap-6 mb-6">
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 	<div
-		*ngFor="let post of filteredPostsData"
+		*ngFor="let post of postsData"
 		class="post-wrapper">
 		<a
 			[href]="post.src"
@@ -21,11 +21,28 @@
 						class="rounded-t"
 						alt="Card"
 						[src]="post.img" />
+					<div
+						*ngIf="!post.img && post.video"
+						class="no-img-video">
+						<i class="pi pi-play"></i>
+					</div>
+					<div class="mt-4 ml-4">
+						<p-tag
+							icon="pi pi-calendar"
+							class="pr-2"
+							styleClass="bg-primary"
+							[value]="post.date.toLocaleDateString('es-ES')">
+						</p-tag>
+						<p-tag
+							*ngIf="post.video"
+							icon="pi pi-video"
+							styleClass="bg-primary-2"
+							value="Multimedia">
+						</p-tag>
+					</div>
 				</ng-template>
-				<div
-					class="py-1"
-					*ngIf="post.descriptionOverview">
-					{{ post.descriptionOverview }}
+				<div>
+					{{ post.description }}
 				</div>
 			</p-card>
 		</a>
