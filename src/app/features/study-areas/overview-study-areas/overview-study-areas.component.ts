@@ -23,9 +23,8 @@ export class OverviewStudyAreasComponent implements OnInit {
 	tableColumns: TableColumn[] = [
 		{ field: 'name', label: 'Nombre' },
 		{ field: 'presence', label: 'Presencia' },
-		{ field: 'absence', label: 'Ausencia' },
+		{ field: 'num_cats', label: 'Núm. gatos' },
 		{ field: 'region', label: 'Comunidad Autónoma' },
-		{ field: 'coords', label: 'Coordenadas' },
 		{ field: 'link', label: '' }
 	];
 
