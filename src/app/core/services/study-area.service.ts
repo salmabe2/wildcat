@@ -5,6 +5,14 @@ import { StudyArea } from '@wildcat/interfaces';
 	providedIn: 'root'
 })
 export class StudyAreaService {
+	regions: String[] = [
+		'Aragón',
+		'Castilla La Mancha',
+		'Castilla y León',
+		'Extremadura',
+		'Región de Murcia'
+	];
+
 	studyAreas: StudyArea[] = [
 		{
 			id: 397,
@@ -34,7 +42,7 @@ export class StudyAreaService {
 			id: 1006,
 			name: 'Monegros',
 			presence: true,
-			num_cats: 99,
+			num_cats: 3,
 			region: 'Aragón',
 			link: 'https://docs.google.com/document/d/1_xXZcdUPrNqvC5NentI3J6nHAKfrTeUe/edit?usp=drive_link&ouid=115988741321464704916&rtpof=true&sd=true'
 		},
@@ -42,7 +50,7 @@ export class StudyAreaService {
 			id: 1037,
 			name: 'Valdegeña',
 			presence: true,
-			num_cats: 99,
+			num_cats: 1,
 			region: 'Castilla y León',
 			link: 'https://docs.google.com/document/d/1HSsLKIbxy1_vX5R5Op8VeG1PprjBe_Vs/edit?usp=drive_link&ouid=115988741321464704916&rtpof=true&sd=true'
 		}
