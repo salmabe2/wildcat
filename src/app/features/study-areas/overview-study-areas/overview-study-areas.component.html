@@ -12,17 +12,18 @@
 	#rowTemplate
 	let-studyArea>
 	<tr>
-		<td *ngIf="studyArea.name">{{ studyArea.name }}</td>
-		<td *ngIf="studyArea.presence">{{ studyArea.presence }}</td>
-		<td *ngIf="studyArea.absence">{{ studyArea.absence }}</td>
-		<td *ngIf="studyArea.region">{{ studyArea.region }}</td>
-		<td *ngIf="studyArea.coords">{{ studyArea.coords }}</td>
+		<td>{{ studyArea.name }}</td>
+		<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
+		<td>{{ studyArea.num_cats }}</td>
+		<td>{{ studyArea.region }}</td>
 		<td>
-			<button
+			<a
 				class="px-2 py-1 text-sm text-white rounded bg-primary"
-				[routerLink]="['/study-areas/' + studyArea.id]">
+				[href]="studyArea.link"
+				target="_blank"
+				rel="noopener noreferrer">
 				Ver
-			</button>
+			</a>
 		</td>
 	</tr>
 </ng-template>
