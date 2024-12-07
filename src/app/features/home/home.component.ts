@@ -15,7 +15,7 @@ import { TagModule } from 'primeng/tag';
 	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-	recentPosts!: Publication[];
+	public recentPosts!: Publication[];
 
 	constructor(
 		private route: ActivatedRoute,

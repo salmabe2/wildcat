@@ -5,9 +5,9 @@
 			class="input"
 			type="text"
 			pInputText
-			[(ngModel)]="searchInputText"
-			(ngModelChange)="onSearch()"
-			placeholder="Buscar" />
+			(keyup)="onSearch(searchInput.value)"
+			placeholder="Buscar"
+      #searchInput />
 	</p-iconField>
 </div>
 <ui-table
@@ -32,3 +32,5 @@
 		<td>{{ partner.blocks }}</td>
 	</tr>
 </ng-template>
+
+<!-- TODO: Add no results message -->
