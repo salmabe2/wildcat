@@ -8,21 +8,25 @@ import { PartnersComponent } from './features/partners/partners.component';
 import { OverviewOnePublicationComponent } from './features/publications/overview-one-publication/overview-one-publication.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  { path: 'home', component: HomeComponent },
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      { path: 'publications', component: OverviewPublicationsComponent },
-      { path: 'publications/:id', component: OverviewOnePublicationComponent },
-      { path: 'study-areas', component: OverviewStudyAreasComponent },
-      { path: 'study-areas/:id', component: StudyAreaItemComponent },
-      { path: 'partners', component: PartnersComponent }
-    ]
-  }
+	{ path: 'home', component: HomeComponent },
+	{
+		path: '',
+		component: LayoutComponent,
+		children: [
+			{ path: 'publications', component: OverviewPublicationsComponent },
+			{ path: 'publications/:id', component: OverviewOnePublicationComponent },
+			{ path: 'study-areas', component: OverviewStudyAreasComponent },
+			{ path: 'study-areas/:id', component: StudyAreaItemComponent },
+			{ path: 'partners', component: PartnersComponent }
+		]
+	},
+	{
+		path: '',
+		redirectTo: 'home',
+		pathMatch: 'full'
+	},
+	{
+		path: '**',
+		redirectTo: 'home'
+	}
 ];
