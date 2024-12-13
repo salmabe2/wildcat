@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
+
 import { Table, TableModule } from 'primeng/table';
-import { TableColumn } from '../../interfaces/table.interface';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+
+import { TableColumn } from '../../interfaces/table.interface';
+
 
 @Component({
 	selector: 'ui-table',
@@ -13,9 +16,9 @@ import { InputIconModule } from 'primeng/inputicon';
 	styleUrl: './table.component.scss'
 })
 export class TableComponent {
-	@Input() tableColumns: TableColumn[] = [];
-	@Input() items = [{}];
-	@Input() rowTemplate!: TemplateRef<any>;
+	@Input() public tableColumns: TableColumn[] = [];
+	@Input() public items = [{}];
+	@Input() public rowTemplate!: TemplateRef<any>;
 
-	@ViewChild('pTable') pTable!: Table;
+	@ViewChild('pTable') public pTable!: Table;
 }

@@ -16,17 +16,17 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 	imports: [TableComponent, CommonModule, RouterModule]
 })
 export class OverviewStudyAreasComponent implements OnInit {
-	constructor(private studyAreaService: StudyAreaService) {}
+	public studyAreas!: StudyArea[];
 
-	studyAreas!: StudyArea[];
-
-	tableColumns: TableColumn[] = [
+	public tableColumns: TableColumn[] = [
 		{ field: 'name', label: 'Nombre', sort: true },
 		{ field: 'presence', label: 'Presencia', sort: true },
 		{ field: 'num_cats', label: 'Núm. gatos', sort: true },
 		{ field: 'region', label: 'Comunidad Autónoma', sort: true },
 		{ field: 'link', label: '' }
-	];
+  ];
+
+  constructor(private studyAreaService: StudyAreaService) {}
 
 	ngOnInit(): void {
 		this.studyAreas = this.studyAreaService.studyAreas;

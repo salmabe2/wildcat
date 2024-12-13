@@ -1,31 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardModule } from 'primeng/card';
-import { TabMenuModule } from 'primeng/tabmenu';
-import { MenuItem } from 'primeng/api';
+
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { MenuItem } from 'primeng/api';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TagModule } from 'primeng/tag';
+
 import { PublicationService } from '@wildcat/services';
 import { Publication, PublicationType } from '@wildcat/interfaces';
-import { TagModule } from 'primeng/tag';
 
 @Component({
 	selector: 'app-overview-publications',
 	standalone: true,
-	imports: [CommonModule, CardModule, TabMenuModule, ButtonModule, TagModule],
+	imports: [CommonModule, ButtonModule, CardModule, TabMenuModule, TagModule],
 	templateUrl: './overview-publications.component.html',
 	styleUrl: './overview-publications.component.scss'
 })
 export class OverviewPublicationsComponent implements OnInit {
-	constructor(private publicationService: PublicationService) {}
-
-	tabMenuModel: MenuItem[] = [
+	public tabMenuModel: MenuItem[] = [
 		{ label: 'Todos', id: 'all' },
 		{ label: 'Proyecto', id: 'project' },
 		// { label: 'Científicas', id: 'science' },
 		{ label: 'Noticias', id: 'news' }
 	];
 
-	postsData!: Publication[];
+	public postsData!: Publication[];
+
+	constructor(private publicationService: PublicationService) {}
 
 	ngOnInit(): void {
 		this.postsData = this.publicationService.getPublications();
@@ -36,7 +38,7 @@ export class OverviewPublicationsComponent implements OnInit {
 	 *
 	 * @param {MenuItem} $event - The selected menu item for filtering.
 	 */
-	filterPostsOnTabChange($event: MenuItem) {
+	filterPostsOnTabChange($event: MenuItem): void {
 		this.postsData =
 			$event.id === 'all'
 				? this.publicationService.getPublications()
