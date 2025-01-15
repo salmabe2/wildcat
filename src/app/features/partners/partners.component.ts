@@ -15,7 +15,6 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 import { TableComponent } from '@wildcat/shared/components';
 
 @Component({
-	selector: 'app-blocks',
 	standalone: true,
 	imports: [
 		CommonModule,
@@ -31,7 +30,7 @@ import { TableComponent } from '@wildcat/shared/components';
 	templateUrl: './partners.component.html',
 	styleUrl: './partners.component.scss'
 })
-export class PartnersComponent implements OnInit, OnDestroy {
+export default class PartnersComponent implements OnInit, OnDestroy {
 	private debouncer: Subject<string> = new Subject<string>();
 	private debouncerSubscription?: Subscription;
 
