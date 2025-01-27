@@ -4,9 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
-	standalone: true,
-	imports: [RouterOutlet, HeaderComponent],
-	templateUrl: './layout.component.html',
-	styleUrl: './layout.component.scss'
+    imports: [RouterOutlet, HeaderComponent],
+    templateUrl: './layout.component.html',
+    styleUrl: './layout.component.scss'
 })
 export default class LayoutComponent {}

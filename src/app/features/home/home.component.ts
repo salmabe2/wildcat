@@ -8,11 +8,10 @@ import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 
 @Component({
-	selector: 'app-home',
-	standalone: true,
-	imports: [GalleriaModule, HeaderComponent, CardModule, TagModule, RouterModule],
-	templateUrl: './home.component.html',
-	styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [GalleriaModule, HeaderComponent, CardModule, TagModule, RouterModule],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 	public recentPosts!: Publication[];
