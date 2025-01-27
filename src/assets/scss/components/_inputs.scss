@@ -1,3 +1,6 @@
-input, .input {
-    @apply resize-none border-2 border-solid border-gray-300 w-full h-[32px] text-base;
+input,
+.input,
+.p-inputtext {
+	@apply w-full h-[32px];
+  border-width: 2px !important;
 }

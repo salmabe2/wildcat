@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { debounceTime, Subject, Subscription } from 'rxjs';
 
 import { CardModule } from 'primeng/card';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { TagModule } from 'primeng/tag';
 
@@ -21,8 +21,8 @@ import { TableComponent } from '@wildcat/shared/components';
 
 		CardModule,
 		FormsModule,
-		IconFieldModule,
-		InputIconModule,
+		IconField,
+		InputIcon,
 		InputTextModule,
 		TableComponent,
 		TagModule
@@ -64,7 +64,6 @@ export default class PartnersComponent implements OnInit, OnDestroy {
 	}
 
 	searchBlocks(term: string): void {
-		console.log('searchBlocks()');
 		const searchText = term.toLowerCase();
 		if (searchText) {
 			this.partnersData = this.partnerService.partnersData.filter((partner) => {

@@ -2,16 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
 
 import { Table, TableModule } from 'primeng/table';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
 
 import { TableColumn } from '../../interfaces/table.interface';
-
 
 @Component({
 	selector: 'ui-table',
 	standalone: true,
-	imports: [TableModule, CommonModule, IconFieldModule, InputIconModule],
+	imports: [TableModule, CommonModule],
 	templateUrl: './table.component.html',
 	styleUrl: './table.component.scss'
 })

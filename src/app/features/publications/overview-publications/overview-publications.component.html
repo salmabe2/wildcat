@@ -13,9 +13,8 @@
 			rel="noopener noreferrer">
 			<p-card
 				[header]="post.title"
-				[subheader]="post.subtitle"
 				styleClass="w-full h-full">
-				<ng-template pTemplate="header">
+				<ng-template #header>
 					<img
 						*ngIf="post.img"
 						class="rounded-t"
@@ -41,6 +40,7 @@
 						</p-tag>
 					</div>
 				</ng-template>
+				<ng-template #subtitle> {{ post.subtitle }} </ng-template>
 				<div>
 					{{ post.description }}
 				</div>
