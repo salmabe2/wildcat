@@ -1,6 +1,6 @@
 // Following https://dev.to/joxx/creating-an-organized-scss-file-structure-5dca directives
-@import 'abstracts/all';
-@import 'base/all';
-@import 'components/all';
+@use 'abstracts/all';
+@use 'base/all' as all2;
+@use 'components/all' as all3;
 
 @tailwind utilities;

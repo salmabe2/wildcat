@@ -6,11 +6,10 @@ import { Table, TableModule } from 'primeng/table';
 import { TableColumn } from '../../interfaces/table.interface';
 
 @Component({
-	selector: 'ui-table',
-	standalone: true,
-	imports: [TableModule, CommonModule],
-	templateUrl: './table.component.html',
-	styleUrl: './table.component.scss'
+    selector: 'ui-table',
+    imports: [TableModule, CommonModule],
+    templateUrl: './table.component.html',
+    styleUrl: './table.component.scss'
 })
 export class TableComponent {
 	@Input() public tableColumns: TableColumn[] = [];

@@ -15,20 +15,18 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 import { TableComponent } from '@wildcat/shared/components';
 
 @Component({
-	standalone: true,
-	imports: [
-		CommonModule,
-
-		CardModule,
-		FormsModule,
-		IconField,
-		InputIcon,
-		InputTextModule,
-		TableComponent,
-		TagModule
-	],
-	templateUrl: './partners.component.html',
-	styleUrl: './partners.component.scss'
+    imports: [
+        CommonModule,
+        CardModule,
+        FormsModule,
+        IconField,
+        InputIcon,
+        InputTextModule,
+        TableComponent,
+        TagModule
+    ],
+    templateUrl: './partners.component.html',
+    styleUrl: './partners.component.scss'
 })
 export default class PartnersComponent implements OnInit, OnDestroy {
 	private debouncer: Subject<string> = new Subject<string>();

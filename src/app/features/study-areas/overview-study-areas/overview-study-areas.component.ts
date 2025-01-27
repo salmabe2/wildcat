@@ -9,10 +9,9 @@ import { TableComponent } from '@wildcat/shared/components';
 import { TableColumn } from '@wildcat/shared/interfaces';
 
 @Component({
-	standalone: true,
-	templateUrl: './overview-study-areas.component.html',
-	styleUrl: './overview-study-areas.component.scss',
-	imports: [TableComponent, CommonModule, RouterModule]
+    templateUrl: './overview-study-areas.component.html',
+    styleUrl: './overview-study-areas.component.scss',
+    imports: [TableComponent, CommonModule, RouterModule]
 })
 export default class OverviewStudyAreasComponent implements OnInit {
 	public studyAreas!: StudyArea[];

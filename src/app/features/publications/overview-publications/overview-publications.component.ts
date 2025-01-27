@@ -11,10 +11,9 @@ import { PublicationService } from '@wildcat/services';
 import { Publication, PublicationType } from '@wildcat/interfaces';
 
 @Component({
-	standalone: true,
-	imports: [CommonModule, ButtonModule, CardModule, TabMenuModule, TagModule],
-	templateUrl: './overview-publications.component.html',
-	styleUrl: './overview-publications.component.scss'
+    imports: [CommonModule, ButtonModule, CardModule, TabMenuModule, TagModule],
+    templateUrl: './overview-publications.component.html',
+    styleUrl: './overview-publications.component.scss'
 })
 export default class OverviewPublicationsComponent implements OnInit {
 	public tabMenuModel: MenuItem[] = [
