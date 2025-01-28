@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { MenuItem } from 'primeng/api';
-import { TabMenuModule } from 'primeng/tabmenu';
-import { TagModule } from 'primeng/tag';
+import { TabMenu } from 'primeng/tabmenu';
 
 import { PublicationService } from '@wildcat/services';
 import { Publication, PublicationType } from '@wildcat/interfaces';
+import { PublicationCardComponent } from '../publication-card/publication-card.component';
 
 @Component({
-    imports: [CommonModule, ButtonModule, CardModule, TabMenuModule, TagModule],
-    templateUrl: './overview-publications.component.html',
-    styleUrl: './overview-publications.component.scss'
+	imports: [CommonModule, TabMenu, PublicationCardComponent],
+	templateUrl: './overview-publications.component.html',
+	styleUrl: './overview-publications.component.scss'
 })
 export default class OverviewPublicationsComponent implements OnInit {
 	public tabMenuModel: MenuItem[] = [

@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { GalleriaModule } from 'primeng/galleria';
-import { HeaderComponent } from 'src/app/layout/header/header.component';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { PublicationService } from '@wildcat/services';
-import { Publication } from '@wildcat/interfaces';
-import { CardModule } from 'primeng/card';
-import { TagModule } from 'primeng/tag';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
+import { Publication } from '@wildcat/interfaces';
+import { PublicationService } from '@wildcat/services';
+import { HeaderComponent } from 'src/app/layout/header/header.component';
+import { PublicationCardComponent } from '../publications/publication-card/publication-card.component';
 @Component({
-    selector: 'app-home',
-    imports: [GalleriaModule, HeaderComponent, CardModule, TagModule, RouterModule],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+	imports: [
+		CommonModule,
+		RouterModule,
+
+		HeaderComponent,
+		PublicationCardComponent
+	],
+	templateUrl: './home.component.html',
+	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 	public recentPosts!: Publication[];

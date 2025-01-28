@@ -1,0 +1,57 @@
+:host {
+	.header-img {
+		@apply rounded-t;
+		// background-image: url('');
+	}
+
+	::ng-deep {
+		.p-card {
+			@apply h-full rounded cursor-pointer;
+			@apply transition ease-in-out delay-100;
+
+			&:hover {
+				@apply drop-shadow-lg scale-105 border-2 border-primary-2;
+				.p-card-title {
+					@apply underline;
+				}
+			}
+
+			.p-card-header {
+				.no-img-video {
+					@apply text-center py-5 bg-light;
+					i {
+						@apply w-[10vw] h-[10vw] max-w-[150px] max-h-[150px] mx-auto pl-[1vw];
+						@apply flex items-center justify-center; // Align triangle in the center of the circle
+						@apply bg-primary-1 rounded-full;
+						transition: background-color 0.3s ease;
+
+						&::before {
+							content: '';
+							@apply w-0 h-0;
+							border-left: 3vw solid var(--light_color); /* Triangle size based on viewport width */
+							border-top: 1.7vw solid transparent;
+							border-bottom: 1.7vw solid transparent;
+							@apply min-[1800px]:border-l-[56px] min-[1800px]:border-y-[30px]; // @media (min-width: 1800px)
+						}
+					}
+				}
+			}
+
+			.p-card-content {
+				@apply p-0 flex-grow;
+			}
+
+			.p-card-title {
+				@apply text-lg;
+			}
+
+			.p-card-subtitle {
+				@apply text-balance;
+			}
+
+			.p-card-footer {
+				@apply flex justify-center p-0;
+			}
+		}
+	}
+}

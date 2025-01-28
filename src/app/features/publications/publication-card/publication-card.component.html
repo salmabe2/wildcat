@@ -1,0 +1,44 @@
+<a
+	[href]="post().src"
+	target="_blank"
+	rel="noopener noreferrer">
+	<p-card
+		[header]="post().title"
+		styleClass="w-full h-full">
+		<ng-template #header>
+			@if (post().img) {
+				<img
+					class="rounded-t header-img"
+					alt="Card"
+					[src]="post().img"
+          (error)="post().img = ''" />
+			}
+      @if (!post().img && !post().video) {
+				<div class="py-4 text-center bg-light">
+					<i class="pi pi-image !text-9xl text-primary-1"></i>
+				</div>
+			}
+			@if (!post().img && post().video) {
+				<div class="no-img-video"><i class="pi pi-play"></i></div>
+			}
+			<div class="mt-4 ml-4">
+				<p-tag
+					icon="pi pi-calendar"
+					styleClass="bg-primary"
+					[value]="post().date.toLocaleDateString('es-ES')">
+				</p-tag>
+				@if (post().video) {
+					<p-tag
+						icon="pi pi-video"
+						styleClass="!bg-primary-2 ml-2"
+						value="Multimedia">
+					</p-tag>
+				}
+			</div>
+		</ng-template>
+		<ng-template #subtitle> {{ post().subtitle }} </ng-template>
+		<div>
+			{{ post().description }}
+		</div>
+	</p-card>
+</a>

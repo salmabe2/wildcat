@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+
 import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
-import { ButtonModule } from 'primeng/button';
-import { Router } from '@angular/router';
+import { Menubar } from 'primeng/menubar';
 
 @Component({
-    selector: 'app-header',
-    imports: [MenubarModule, ButtonModule],
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.scss'
+	selector: 'app-header',
+	imports: [RouterModule, Menubar],
+	templateUrl: './header.component.html',
+	styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 	public items: MenuItem[] = [
