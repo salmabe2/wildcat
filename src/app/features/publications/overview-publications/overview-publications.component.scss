@@ -2,4 +2,10 @@
 	.posts-list {
 		@apply grid gap-6 md:grid-cols-2 lg:grid-cols-3;
 	}
+
+	::ng-deep {
+		.p-menuitem-text {
+			line-height: 1;
+		}
+	}
 }
