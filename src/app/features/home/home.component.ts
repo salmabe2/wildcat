@@ -18,7 +18,7 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-	public recentPosts!: Publication[];
+  public recentPosts!: Publication[];
 
 	constructor(
 		private route: ActivatedRoute,
