@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
-	{ path: '', component: HomeComponent },
+	{ path: 'home', component: HomeComponent },
 	{
 		path: '',
 		loadComponent: () => import('./layout/layout.component'),
@@ -25,11 +25,15 @@ export const routes: Routes = [
 			{
 				path: 'partners',
 				loadComponent: () => import('./features/partners/partners.component')
+			},
+			{
+				path: '**',
+				redirectTo: '/home'
 			}
 		]
 	},
 	{
 		path: '**',
-		redirectTo: ''
+		redirectTo: 'home'
 	}
 ];
