@@ -1,6 +1,8 @@
 # Wildcat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+** Work in progress, see branch [develop](https://github.com/salmabe2/wildcat/tree/develop) for latest changes.**
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
 
 You can see it live [here](https://proyectocensogatomontes.netlify.app/).
 
