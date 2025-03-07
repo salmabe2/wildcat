@@ -10,7 +10,7 @@ import { Menubar } from 'primeng/menubar';
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 	private router = inject(Router);
 
 	public items = signal<MenuItem[]>([
@@ -36,11 +36,7 @@ export class HeaderComponent implements OnInit {
 		}
 	]);
 
-	// TODO: implement transparent header for home page
-	public transparentInput = input<boolean>(false, { alias: 'transparent' });
-	//public transparent = signal<boolean>(this.transparentInput());
-
-	ngOnInit(): void {}
+	public transparent = input<boolean>(false);
 
 	navigateToSection(fragment: string): void {
 		this.router.navigate(['/'], { fragment });

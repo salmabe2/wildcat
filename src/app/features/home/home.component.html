@@ -1,5 +1,5 @@
-<app-header [transparent]="true"></app-header>
-<div class="wrapper">
+<app-header [transparent]="transparentHeader()"></app-header>
+<div class="wrapper" (scroll)="onScroll($event)">
 	<section class="header-section">
 		<div class="img-header">
 			<h1 class="title">PROYECTO CENSO ESPAÑOL DEL GATO MONTÉS</h1>

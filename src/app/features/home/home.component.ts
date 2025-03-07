@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 	private publicationService = inject(PublicationService);
 
 	public recentPosts = signal<Publication[]>([]);
+	public transparentHeader = signal<boolean>(true);
 
 	ngOnInit(): void {
 		/* Scroll to about us info */
@@ -35,5 +36,13 @@ export class HomeComponent implements OnInit {
 		});
 
 		this.recentPosts.set(this.publicationService.getRecentPublications(3));
+	}
+
+	onScroll(event: Event) {
+		const target = event.target as HTMLElement; // Cast event target to HTMLElement
+		const scrollTopPosition = target.scrollTop; // Get the scroll position
+
+		this.transparentHeader.set(scrollTopPosition === 0);
+		console.log(this.transparentHeader());
 	}
 }
