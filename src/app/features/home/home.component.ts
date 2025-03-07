@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
@@ -18,12 +18,10 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-	public recentPosts = signal<Publication[]>([]);
+	private route = inject(ActivatedRoute);
+	private publicationService = inject(PublicationService);
 
-	constructor(
-		private route: ActivatedRoute,
-		private publicationService: PublicationService
-	) {}
+	public recentPosts = signal<Publication[]>([]);
 
 	ngOnInit(): void {
 		/* Scroll to about us info */

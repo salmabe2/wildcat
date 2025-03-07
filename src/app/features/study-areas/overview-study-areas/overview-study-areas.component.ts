@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,8 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 	imports: [TableComponent, CommonModule, RouterModule]
 })
 export default class OverviewStudyAreasComponent implements OnInit {
+  private studyAreaService = inject(StudyAreaService);
+
 	public studyAreas = signal<StudyArea[]>([]);
 
 	public tableColumns = signal<TableColumn[]>([
@@ -23,8 +25,6 @@ export default class OverviewStudyAreasComponent implements OnInit {
 		{ field: 'region', label: 'Comunidad Autónoma', sort: true },
 		{ field: 'link', label: '' }
 	]);
-
-	constructor(private studyAreaService: StudyAreaService) {}
 
 	ngOnInit(): void {
 		this.studyAreas.set(this.studyAreaService.studyAreas);

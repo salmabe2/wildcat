@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MenuItem } from 'primeng/api';
@@ -14,6 +14,8 @@ import { PublicationCardComponent } from '../publication-card/publication-card.c
 	styleUrl: './overview-publications.component.scss'
 })
 export default class OverviewPublicationsComponent implements OnInit {
+	private publicationService = inject(PublicationService);
+
 	public tabMenu = signal<MenuItem[]>([
 		{ label: 'Todos', id: 'all' },
 		{ label: 'Proyecto', id: 'project' },
@@ -21,8 +23,6 @@ export default class OverviewPublicationsComponent implements OnInit {
 	]);
 
 	public postsData = signal<Publication[]>([]);
-
-	constructor(private publicationService: PublicationService) {}
 
 	ngOnInit(): void {
 		this.postsData.set(this.publicationService.getPublications());

@@ -1,4 +1,4 @@
-import { Component, effect, OnInit, signal } from '@angular/core';
+import { Component, effect, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -28,6 +28,8 @@ import { TableComponent } from '@wildcat/shared/components';
 	styleUrl: './partners.component.scss'
 })
 export default class PartnersComponent implements OnInit {
+  private partnerService = inject(PartnerService);
+
   //TODO: Change logic, waiting on new data
 	public searchText = signal<string>('');
 
@@ -48,8 +50,6 @@ export default class PartnersComponent implements OnInit {
 			clearTimeout(timeout);
 		});
 	});
-
-	constructor(private partnerService: PartnerService) {}
 
 	ngOnInit(): void {
 		this.partnersData.set(this.partnerService.partnersData);

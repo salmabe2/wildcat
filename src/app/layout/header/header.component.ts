@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
@@ -11,6 +11,8 @@ import { Menubar } from 'primeng/menubar';
 	styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
+	private router = inject(Router);
+
 	public items = signal<MenuItem[]>([
 		{
 			label: 'Sobre el proyecto',
@@ -34,11 +36,9 @@ export class HeaderComponent implements OnInit {
 		}
 	]);
 
-  // TODO: implement transparent header for home page
+	// TODO: implement transparent header for home page
 	public transparentInput = input<boolean>(false, { alias: 'transparent' });
 	//public transparent = signal<boolean>(this.transparentInput());
-
-	constructor(private router: Router) {}
 
 	ngOnInit(): void {}
 
