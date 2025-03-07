@@ -5,17 +5,18 @@
 	[globalFilterFields]="['field']">
 	<ng-template pTemplate="header">
 		<tr>
-			<th
-				*ngFor="let column of tableColumns()"
-				[class]="column.class"
-				[pSortableColumn]="column.field"
-				[pSortableColumnDisabled]="!column.sort">
-				{{ column.label }}
-				<p-sortIcon
-					class="ml-2"
-					*ngIf="column.sort"
-					[field]="column.field" />
-			</th>
+			@for (column of tableColumns(); track column) {
+				<th
+					[class]="column.class"
+					[pSortableColumn]="column.field"
+					[pSortableColumnDisabled]="!column.sort">
+					{{ column.label }}
+					<p-sortIcon
+						class="ml-2"
+						*ngIf="column.sort"
+						[field]="column.field" />
+				</th>
+			}
 		</tr>
 	</ng-template>
 	<ng-template
