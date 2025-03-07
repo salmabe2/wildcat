@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, effect, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { debounceTime, Subject, Subscription } from 'rxjs';
 
 import { CardModule } from 'primeng/card';
 import { IconField } from 'primeng/iconfield';
@@ -15,63 +14,60 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 import { TableComponent } from '@wildcat/shared/components';
 
 @Component({
-    imports: [
-        CommonModule,
-        CardModule,
-        FormsModule,
-        IconField,
-        InputIcon,
-        InputTextModule,
-        TableComponent,
-        TagModule
-    ],
-    templateUrl: './partners.component.html',
-    styleUrl: './partners.component.scss'
+	imports: [
+		CommonModule,
+		CardModule,
+		FormsModule,
+		IconField,
+		InputIcon,
+		InputTextModule,
+		TableComponent,
+		TagModule
+	],
+	templateUrl: './partners.component.html',
+	styleUrl: './partners.component.scss'
 })
-export default class PartnersComponent implements OnInit, OnDestroy {
-	private debouncer: Subject<string> = new Subject<string>();
-	private debouncerSubscription?: Subscription;
+export default class PartnersComponent implements OnInit {
+  //TODO: Change logic, waiting on new data
+	public searchText = signal<string>('');
 
-	public tableColumns: TableColumn[] = [
+	public tableColumns = signal<TableColumn[]>([
 		{ field: 'name', label: 'Nombre' },
 		{ field: 'block', label: 'Bloque', class: 'w-1/2' }
-	];
-	public partnersData!: Partner[];
+	]);
+	public partnersData = signal<Partner[]>([]);
+
+  //TODO: Move to component (searchInput)
+	debouncerEffect = effect((onCleanup) => {
+		const term = this.searchText();
+		const timeout = setTimeout(() => {
+			this.searchBlocks(term);
+		}, 500);
+
+		onCleanup(() => {
+			clearTimeout(timeout);
+		});
+	});
 
 	constructor(private partnerService: PartnerService) {}
 
 	ngOnInit(): void {
-		this.partnersData = this.partnerService.partnersData;
-		this.setDebouncerSubscription();
-	}
-
-	ngOnDestroy(): void {
-		this.debouncerSubscription?.unsubscribe();
-	}
-
-	onSearch(term: string): void {
-		this.debouncer.next(term);
-	}
-
-	setDebouncerSubscription(): void {
-		this.debouncerSubscription = this.debouncer
-			.pipe(debounceTime(300))
-			.subscribe((term) => {
-				this.searchBlocks(term);
-			});
+		this.partnersData.set(this.partnerService.partnersData);
 	}
 
 	searchBlocks(term: string): void {
 		const searchText = term.toLowerCase();
 		if (searchText) {
-			this.partnersData = this.partnerService.partnersData.filter((partner) => {
-				return (
-					partner.blocks.toLowerCase().includes(searchText) ||
-					partner.name.toLowerCase().includes(searchText)
-				);
-			});
+			this.partnersData.set(
+				this.partnerService.partnersData.filter((partner) => {
+					return (
+						partner.blocks.toLowerCase().includes(searchText) ||
+						partner.name.toLowerCase().includes(searchText)
+					);
+				})
+			);
 		} else {
-			this.partnersData = this.partnerService.partnersData;
+			this.partnersData.set(this.partnerService.partnersData);
 		}
 	}
 }

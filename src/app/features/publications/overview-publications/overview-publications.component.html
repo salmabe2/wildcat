@@ -1,10 +1,10 @@
 <p-tabMenu
 	styleClass="mb-4"
-	[model]="tabMenuModel"
-	[activeItem]="tabMenuModel[0]"
+	[model]="tabMenu()"
+	[activeItem]="tabMenu()[0]"
 	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
 <div class="posts-list">
-	@for (post of postsData; track post) {
+	@for (post of postsData(); track post) {
 		<app-publication-card
 			class="post-wrapper"
 			[post]="post" />

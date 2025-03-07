@@ -5,14 +5,14 @@
 			class="input"
 			type="text"
 			pInputText
-			(keyup)="onSearch(searchInput.value)"
+			(keyup)="searchText.set(searchInput.value)"
 			placeholder="Buscar"
       #searchInput />
 	</p-iconField>
 </div>
 <ui-table
-	[tableColumns]="tableColumns"
-	[items]="partnersData"
+	[tableColumns]="tableColumns()"
+	[items]="partnersData()"
 	[rowTemplate]="rowTemplate">
 </ui-table>
 

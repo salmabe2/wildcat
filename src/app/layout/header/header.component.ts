@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
@@ -10,8 +10,8 @@ import { Menubar } from 'primeng/menubar';
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-	public items: MenuItem[] = [
+export class HeaderComponent implements OnInit {
+	public items = signal<MenuItem[]>([
 		{
 			label: 'Sobre el proyecto',
 			icon: 'pi pi-info-circle',
@@ -32,11 +32,15 @@ export class HeaderComponent {
 			icon: 'pi pi-file',
 			routerLink: '/publications'
 		}
-	];
+	]);
 
-	@Input() public transparent: boolean = false;
+  // TODO: implement transparent header for home page
+	public transparentInput = input<boolean>(false, { alias: 'transparent' });
+	//public transparent = signal<boolean>(this.transparentInput());
 
 	constructor(private router: Router) {}
+
+	ngOnInit(): void {}
 
 	navigateToSection(fragment: string): void {
 		this.router.navigate(['/'], { fragment });

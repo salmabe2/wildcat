@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MenuItem } from 'primeng/api';
@@ -14,19 +14,18 @@ import { PublicationCardComponent } from '../publication-card/publication-card.c
 	styleUrl: './overview-publications.component.scss'
 })
 export default class OverviewPublicationsComponent implements OnInit {
-	public tabMenuModel: MenuItem[] = [
+	public tabMenu = signal<MenuItem[]>([
 		{ label: 'Todos', id: 'all' },
 		{ label: 'Proyecto', id: 'project' },
-		// { label: 'Científicas', id: 'science' },
 		{ label: 'Noticias', id: 'news' }
-	];
+	]);
 
-	public postsData!: Publication[];
+	public postsData = signal<Publication[]>([]);
 
 	constructor(private publicationService: PublicationService) {}
 
 	ngOnInit(): void {
-		this.postsData = this.publicationService.getPublications();
+		this.postsData.set(this.publicationService.getPublications());
 	}
 
 	/**
@@ -35,11 +34,12 @@ export default class OverviewPublicationsComponent implements OnInit {
 	 * @param {MenuItem} $event - The selected menu item for filtering.
 	 */
 	filterPostsOnTabChange($event: MenuItem): void {
-		this.postsData =
+		this.postsData.set(
 			$event.id === 'all'
 				? this.publicationService.getPublications()
 				: this.publicationService.getPublicationsByType(
 						$event.id as PublicationType
-					);
+					)
+		);
 	}
 }

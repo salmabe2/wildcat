@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
@@ -18,7 +18,7 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 	styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  public recentPosts!: Publication[];
+	public recentPosts = signal<Publication[]>([]);
 
 	constructor(
 		private route: ActivatedRoute,
@@ -36,6 +36,6 @@ export class HomeComponent implements OnInit {
 			}
 		});
 
-		this.recentPosts = this.publicationService.getRecentPublications(3);
+		this.recentPosts.set(this.publicationService.getRecentPublications(3));
 	}
 }

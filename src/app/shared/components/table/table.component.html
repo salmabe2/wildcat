@@ -1,17 +1,20 @@
 <p-table
-	[value]="items"
-	[sortField]="tableColumns[0].field"
+	[value]="items()"
+	[sortField]="tableColumns()[0].field"
 	[sortOrder]="1"
-	[globalFilterFields]="['field']"
-	#pTable>
+	[globalFilterFields]="['field']">
 	<ng-template pTemplate="header">
 		<tr>
 			<th
-				*ngFor="let column of tableColumns"
+				*ngFor="let column of tableColumns()"
 				[class]="column.class"
 				[pSortableColumn]="column.field"
 				[pSortableColumnDisabled]="!column.sort">
-				{{ column.label }} <p-sortIcon class="ml-2" *ngIf="column.sort" [field]="column.field" />
+				{{ column.label }}
+				<p-sortIcon
+					class="ml-2"
+					*ngIf="column.sort"
+					[field]="column.field" />
 			</th>
 		</tr>
 	</ng-template>
