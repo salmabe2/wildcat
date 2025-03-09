@@ -29,6 +29,16 @@ const customPreset = definePreset(Aura, {
 			tabPadding: '1rem',
 			tabActiveColor: '#059669',
 			tabActiveBorderColor: '#059669'
+		},
+		menubar: {
+			itemFocusBackground: 'var(--color-forest-1)',
+			itemIconColor: 'var(--color-light)',
+			itemIconFocusColor: 'var(--color-light)'
+		},
+		card: {
+			titleFontSize: '1.125rem',
+			titleFontWeight: '700',
+			shadow: '0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f'
 		}
 	}
 });

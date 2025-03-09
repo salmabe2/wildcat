@@ -1,18 +1,20 @@
 <app-header [transparent]="transparentHeader()"></app-header>
-<div class="wrapper" (scroll)="onScroll($event)">
-	<section class="header-section">
-		<div class="img-header">
-			<h1 class="title">PROYECTO CENSO ESPAÑOL DEL GATO MONTÉS</h1>
+<div
+	class="wrapper"
+	(scroll)="onScroll($event)">
+	<section class="hero">
+		<div class="hero__img">
+			<h1 class="text-4xl font-bold shadow-lg">
+				PROYECTO CENSO ESPAÑOL DEL GATO MONTÉS
+			</h1>
 		</div>
 	</section>
 	<section
-		class="about-section"
+		class="about-section bg-light"
 		id="about">
-		<div class="content">
-			<h2 class="text-4xl font-bold">Sobre el proyecto</h2>
-			<p
-				id="about"
-				class="text-justify">
+		<div class="about-section__content">
+			<h2 class="text-4xl font-bold mb-4">Sobre el proyecto</h2>
+			<p>
 				El proyecto nace de la preocupación de dos investigadores en la especie,
 				Emilio Virgós (URJC) y Jose María Gil-Sánchez (Universidad de Granada)
 				en el año 2019. Se trata de una iniciativa particular y financiada con
@@ -42,14 +44,12 @@
 			</p>
 		</div>
 	</section>
-	<section class="publications-section">
-		<div class="content">
+	<section class="bg-gray-100 publications-section">
+		<div class="publications-section__content">
 			<h2 class="mb-4 text-4xl font-bold">Últimas publicaciones</h2>
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				@for (post of recentPosts(); track post) {
-					<app-publication-card
-						class="post-wrapper"
-						[post]="post" />
+					<app-publication-card [publicationData]="post" />
 				}
 			</div>
 			<div class="flex justify-center">

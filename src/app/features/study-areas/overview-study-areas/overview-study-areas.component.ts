@@ -10,7 +10,7 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 
 @Component({
 	templateUrl: './overview-study-areas.component.html',
-	styleUrl: './overview-study-areas.component.scss',
+	styleUrl: './overview-study-areas.component.css',
 	imports: [TableComponent, CommonModule, RouterModule]
 })
 export default class OverviewStudyAreasComponent implements OnInit {

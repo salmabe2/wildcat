@@ -15,7 +15,7 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 		PublicationCardComponent
 	],
 	templateUrl: './home.component.html',
-	styleUrl: './home.component.scss'
+	styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
 	private route = inject(ActivatedRoute);
@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		/* Scroll to about us info */
-		this.route.fragment.subscribe((fragment) => {
+    this.route.fragment.subscribe((fragment) => {
+      console.log(fragment);
 			if (fragment) {
 				const element = document.querySelector(`#${fragment}`);
 				if (element) {
@@ -43,6 +44,5 @@ export class HomeComponent implements OnInit {
 		const scrollTopPosition = target.scrollTop; // Get the scroll position
 
 		this.transparentHeader.set(scrollTopPosition === 0);
-		console.log(this.transparentHeader());
 	}
 }

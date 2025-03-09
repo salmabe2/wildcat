@@ -25,7 +25,7 @@ import { TableComponent } from '@wildcat/shared/components';
 		TagModule
 	],
 	templateUrl: './partners.component.html',
-	styleUrl: './partners.component.scss'
+	styleUrl: './partners.component.css'
 })
 export default class PartnersComponent implements OnInit {
   private partnerService = inject(PartnerService);

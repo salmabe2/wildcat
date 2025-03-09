@@ -1,6 +1,6 @@
 <h1 class="my-4 text-3xl font-bold">Áreas de Estudio</h1>
 
-<div class="table-wrapper">
+<div>
 	<ui-table
 		[tableColumns]="tableColumns()"
 		[items]="studyAreas()"
@@ -18,7 +18,7 @@
 		<td>{{ studyArea.region }}</td>
 		<td>
 			<a
-				class="study-area-link"
+				class="button"
 				[href]="studyArea.link"
 				target="_blank"
 				rel="noopener noreferrer">

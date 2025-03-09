@@ -3,10 +3,8 @@
 	[model]="tabMenu()"
 	[activeItem]="tabMenu()[0]"
 	(activeItemChange)="filterPostsOnTabChange($event)"></p-tabMenu>
-<div class="posts-list">
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 	@for (post of postsData(); track post) {
-		<app-publication-card
-			class="post-wrapper"
-			[post]="post" />
+		<app-publication-card [publicationData]="post" />
 	}
 </div>

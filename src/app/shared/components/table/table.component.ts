@@ -9,7 +9,7 @@ import { TableColumn } from '@wildcat/shared/interfaces';
 	selector: 'ui-table',
 	imports: [TableModule, CommonModule],
 	templateUrl: './table.component.html',
-	styleUrl: './table.component.scss'
+	styleUrl: './table.component.css'
 })
 export class TableComponent {
 	public tableColumns = input<TableColumn[]>([]);

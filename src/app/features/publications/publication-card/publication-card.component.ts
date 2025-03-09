@@ -10,8 +10,8 @@ import { Publication } from '@wildcat/interfaces';
 	standalone: true,
 	imports: [CommonModule, Tag, Card],
 	templateUrl: './publication-card.component.html',
-	styleUrl: './publication-card.component.scss'
+	styleUrl: './publication-card.component.css'
 })
 export class PublicationCardComponent {
-	public post = input.required<Publication>();
+	public publicationData = input.required<Publication>();
 }

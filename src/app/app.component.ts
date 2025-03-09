@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
     selector: 'app-root',
     imports: [CommonModule, RouterOutlet],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'wildcat';

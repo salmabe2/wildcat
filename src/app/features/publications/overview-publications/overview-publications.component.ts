@@ -11,7 +11,7 @@ import { PublicationCardComponent } from '../publication-card/publication-card.c
 @Component({
 	imports: [CommonModule, TabMenu, PublicationCardComponent],
 	templateUrl: './overview-publications.component.html',
-	styleUrl: './overview-publications.component.scss'
+	styleUrl: './overview-publications.component.css'
 })
 export default class OverviewPublicationsComponent implements OnInit {
 	private publicationService = inject(PublicationService);

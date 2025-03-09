@@ -8,7 +8,7 @@ import { Menubar } from 'primeng/menubar';
 	selector: 'app-header',
 	imports: [RouterModule, Menubar],
 	templateUrl: './header.component.html',
-	styleUrl: './header.component.scss'
+	styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 	private router = inject(Router);
@@ -39,6 +39,6 @@ export class HeaderComponent {
 	public transparent = input<boolean>(false);
 
 	navigateToSection(fragment: string): void {
-		this.router.navigate(['/'], { fragment });
+		this.router.navigate(['/home'], { fragment });
 	}
 }
