@@ -7,30 +7,27 @@
 			pInputText
 			(keyup)="searchText.set(searchInput.value)"
 			placeholder="Buscar"
-      #searchInput />
+			#searchInput />
 	</p-iconField>
 </div>
 <ui-table
 	[tableColumns]="tableColumns()"
 	[items]="partnersData()"
 	[rowTemplate]="rowTemplate">
+	<ng-template
+		#rowTemplate
+		let-partner>
+    <tr>
+      <td class="font-bold">
+        {{ partner.name }}
+        <p-tag
+          class="bg-forest ml-2"
+          *ngIf="partner.email"
+          icon="pi pi-user"
+          [value]="partner.email">
+        </p-tag>
+      </td>
+      <td>{{ partner.blocks }}</td>
+    </tr>
+	</ng-template>
 </ui-table>
-
-<ng-template
-	#rowTemplate
-	let-partner>
-	<tr>
-		<td class="font-bold">
-			{{ partner.name }}
-			<p-tag
-				class="bg-forest ml-2"
-				*ngIf="partner.email"
-				icon="pi pi-user"
-				[value]="partner.email">
-			</p-tag>
-		</td>
-		<td>{{ partner.blocks }}</td>
-	</tr>
-</ng-template>
-
-<!-- TODO: Add no results message -->

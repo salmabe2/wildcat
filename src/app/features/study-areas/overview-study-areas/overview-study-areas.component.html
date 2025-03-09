@@ -5,25 +5,24 @@
 		[tableColumns]="tableColumns()"
 		[items]="studyAreas()"
 		[rowTemplate]="rowTemplate">
+		<ng-template
+			#rowTemplate
+			let-studyArea>
+			<tr>
+        <td>{{ studyArea.name }}</td>
+        <td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
+        <td>{{ studyArea.num_cats }}</td>
+        <td>{{ studyArea.region }}</td>
+        <td>
+          <a
+            class="button"
+            [href]="studyArea.link"
+            target="_blank"
+            rel="noopener noreferrer">
+            Ver
+          </a>
+        </td>
+      </tr>
+		</ng-template>
 	</ui-table>
 </div>
-
-<ng-template
-	#rowTemplate
-	let-studyArea>
-	<tr>
-		<td>{{ studyArea.name }}</td>
-		<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
-		<td>{{ studyArea.num_cats }}</td>
-		<td>{{ studyArea.region }}</td>
-		<td>
-			<a
-				class="button"
-				[href]="studyArea.link"
-				target="_blank"
-				rel="noopener noreferrer">
-				Ver
-			</a>
-		</td>
-	</tr>
-</ng-template>

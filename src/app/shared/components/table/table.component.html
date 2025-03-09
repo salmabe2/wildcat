@@ -26,3 +26,11 @@
 		</ng-container>
 	</ng-template>
 </p-table>
+
+@if (items.length === 0) {
+	<div class="text-center p-8">
+		<p class="text-lg text-gray-500 font-bold">
+			No se han encontrado resultados
+		</p>
+	</div>
+}
