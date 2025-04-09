@@ -1,3 +1,13 @@
-<p-button [styleClass]="styleClass()">
-	<ng-content />
-</p-button>
+@if (externalLink() !== '') {
+	<a
+		[class]="styleClass()"
+		[href]="externalLink()"
+		target="_blank"
+		rel="noopener noreferrer">
+		{{ label() }}
+	</a>
+} @else {
+	<p-button [styleClass]="styleClass()">
+		{{ label() }}
+	</p-button>
+}

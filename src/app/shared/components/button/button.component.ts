@@ -13,7 +13,9 @@ type ButtonColors = 'forest' | 'forest-1' | 'forest-2';
 export class ButtonComponent {
 	public size = input<ButtonSizes>('medium');
 	public color = input<ButtonColors>('forest');
-	public styleClassInput = input<string>('', { alias: 'styleClass' });
+  public styleClassInput = input<string>('', { alias: 'styleClass' });
+  public externalLink = input<string>('');
+  public label = input.required<string>();
 
 	public styleClass = computed(
 		() =>

@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { Publication } from '@wildcat/interfaces';
 import { PublicationService } from '@wildcat/services';
+import { ButtonComponent } from '@wildcat/shared/components';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
 import { PublicationCardComponent } from '../publications/publication-card/publication-card.component';
 @Component({
@@ -11,11 +12,12 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 		CommonModule,
 		RouterModule,
 
+		ButtonComponent,
 		HeaderComponent,
-		PublicationCardComponent
+		PublicationCardComponent,
 	],
 	templateUrl: './home.component.html',
-	styleUrl: './home.component.css'
+	styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
 	private route = inject(ActivatedRoute);
@@ -26,8 +28,7 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		/* Scroll to about us info */
-    this.route.fragment.subscribe((fragment) => {
-      console.log(fragment);
+		this.route.fragment.subscribe((fragment) => {
 			if (fragment) {
 				const element = document.querySelector(`#${fragment}`);
 				if (element) {

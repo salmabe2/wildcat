@@ -5,13 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { StudyAreaService } from '@wildcat/services';
 import { StudyArea } from '@wildcat/interfaces';
-import { TableComponent } from '@wildcat/shared/components';
 import { TableColumn } from '@wildcat/shared/interfaces';
+import { ButtonComponent } from "@wildcat/shared/components";
+import { TableComponent } from '@wildcat/shared/components';
 
 @Component({
 	templateUrl: './overview-study-areas.component.html',
 	styleUrl: './overview-study-areas.component.css',
-	imports: [TableComponent, CommonModule, RouterModule]
+	imports: [TableComponent, CommonModule, RouterModule, ButtonComponent]
 })
 export default class OverviewStudyAreasComponent implements OnInit {
   private studyAreaService = inject(StudyAreaService);

@@ -52,8 +52,10 @@
 					<app-publication-card [publicationData]="post" />
 				}
 			</div>
-			<div class="flex justify-center">
-				<button [routerLink]="['/publications']">Ver más</button>
+			<div class="flex justify-center mt-5">
+				<ui-button
+					[routerLink]="['/publications']"
+					label="Ver más" />
 			</div>
 		</div>
 	</section>
