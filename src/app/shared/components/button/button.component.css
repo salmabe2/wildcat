@@ -1,0 +1,38 @@
+p-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	border: 2px solid transparent;
+	border-radius: 0.375rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	text-align: center;
+	text-decoration: none;
+}
+
+:host ::ng-deep .button--small {
+	padding: 0.25rem 0.75rem;
+	font-size: 0.875rem;
+}
+
+:host ::ng-deep .button--medium {
+	padding: 0.5rem 1.5rem;
+	font-size: 1rem;
+}
+
+:host :ng-deep .button--large {
+	padding: 0.75rem 1.5rem;
+	font-size: 1.125rem;
+}
+
+:host ::ng-deep .button--forest {
+	background-color: var(--color-forest);
+	border-color: var(--color-forest);
+	color: white;
+}
+
+:host ::ng-deep .button--forest:hover {
+	background-color: var(--color-forest-2);
+	border-color: var(--color-forest-2);
+}
