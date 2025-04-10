@@ -1,3 +1,4 @@
+@if (items().length !== 0) {
 <p-table
 	[value]="items()"
 	[sortField]="tableColumns()[0].field"
@@ -27,7 +28,7 @@
 	</ng-template>
 </p-table>
 
-@if (items.length === 0) {
+} @else {
 	<div class="text-center p-8">
 		<p class="text-lg text-gray-500 font-bold">
 			No se han encontrado resultados
