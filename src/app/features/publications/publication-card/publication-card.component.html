@@ -1,0 +1,44 @@
+<a
+	[href]="publicationData().src"
+	target="_blank"
+	rel="noopener noreferrer">
+	<p-card
+		[header]="publicationData().title"
+		styleClass="w-full h-ful !rounded-sm shadow-xl">
+		<ng-template #header>
+			@if (publicationData().img) {
+				<img
+					class="rounded-t-sm"
+					alt="Card"
+					[src]="publicationData().img"
+					(error)="publicationData().img = ''" />
+			}
+			@if (!publicationData().img && !publicationData().video) {
+				<div class="py-4 text-center bg-light">
+					<i class="pi pi-image !text-9xl text-forest-1"></i>
+				</div>
+			}
+			@if (!publicationData().img && publicationData().video) {
+				<div class="no-img-video"><i class="pi pi-play"></i></div>
+			}
+			<div class="mt-4 ml-4">
+				<p-tag
+					icon="pi pi-calendar"
+					styleClass="bg-forest"
+					[value]="publicationData().date.toLocaleDateString('es-ES')">
+				</p-tag>
+				@if (publicationData().video) {
+					<p-tag
+						icon="pi pi-video"
+						styleClass="!bg-forest-2 ml-2"
+						value="Multimedia">
+					</p-tag>
+				}
+			</div>
+		</ng-template>
+		<ng-template #subtitle> {{ publicationData().subtitle }} </ng-template>
+		<div>
+			{{ publicationData().description }}
+		</div>
+	</p-card>
+</a>

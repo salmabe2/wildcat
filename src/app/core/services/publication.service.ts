@@ -222,10 +222,9 @@ export class PublicationService {
 			date: new Date('2024-04-06'),
 			title: 'El gato montés en la encrucijada',
 			subtitle:
-				'Mucho por aprender aún del gato montés : Algunas respuestas y muchos interrogantes',
+				'Mucho por aprender aún del gato montés: Algunas respuestas y muchos interrogantes',
 			type: 'news',
 			src: 'https://www.youtube.com/watch?v=cMt4ceORXkw&ab_channel=EstaesmitierraAragonTV',
-			img: 'https://www.terramirabile.org/wp-content/uploads/2024/04/Felix-silvestris-bv-Collado-JermosoIMG_4583-1536x1152.jpg',
 			imgInfo: 'Felis silvestris, Fotografía Luis Herrero',
 			video: true
 		},

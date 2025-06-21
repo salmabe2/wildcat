@@ -1,0 +1,63 @@
+::ng-deep p-menubar .p-menubar {
+	border: none;
+	z-index: 9999999;
+}
+
+::ng-deep p-menubar .p-menubar.p-component {
+	border-radius: 0;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	transition: all 300ms ease;
+}
+
+::ng-deep .p-menubar-item-label,
+::ng-deep .p-menubar-item-icon,
+::ng-deep .p-menubar-item-link angledownicon svg {
+	color: var(--color-light);
+}
+
+::ng-deep
+	.p-menubar-item:not(.p-focus):not(.p-disabled).p-focus
+	> .p-menubar-item-content:not(:hover),
+::ng-deep .p-menubar-item.p-focus > .p-menubar-item-content,
+::ng-deep .p-submenu-list,
+::ng-deep .p-menubar-root-list {
+	background-color: transparent;
+}
+
+::ng-deep
+	.p-menubar.bg-forest-1
+	.p-menubar-item:not(.p-focus):not(.p-disabled).p-focus
+	> .p-menubar-item-content:not(:hover),
+::ng-deep
+	.p-menubar.bg-forest-1
+	.p-menubar-item.p-focus
+	> .p-menubar-item-content,
+::ng-deep .p-menubar.bg-forest-1 .p-submenu-list,
+::ng-deep .p-menubar.bg-forest-1 .p-menubar .p-menubar-root-list {
+	background-color: var(--color-forest-1);
+}
+
+::ng-deep .p-menubar.p-component.bg-gradient-shadow {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+	background-color: transparent;
+}
+
+::ng-deep .p-menubar-item-content:hover,
+::ng-deep .p-menubar-item:not(.p-disabled) > .p-menubar-item-content:hover {
+	background-color: var(--color-forest-2);
+}
+
+::ng-deep .p-menubar-button {
+	margin-left: var(--spacing);
+	color: var(--color-forest-1);
+	font-weight: bold;
+	background-color: var(--color-white);
+}
+
+::ng-deep .p-menubar-button:hover,
+::ng-deep .p-menubar-button[aria-expanded='true'] {
+	background-color: var(--color-forest-2);
+	color: var(--color-white);
+}

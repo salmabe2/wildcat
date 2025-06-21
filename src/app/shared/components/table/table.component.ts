@@ -1,24 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef, input } from '@angular/core';
 
-import { Table, TableModule } from 'primeng/table';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
+import { TableModule } from 'primeng/table';
 
-import { TableColumn } from '../../interfaces/table.interface';
-
+import { TableColumn } from '@wildcat/shared/interfaces';
 
 @Component({
 	selector: 'ui-table',
-	standalone: true,
-	imports: [TableModule, CommonModule, IconFieldModule, InputIconModule],
+	imports: [TableModule, CommonModule],
 	templateUrl: './table.component.html',
-	styleUrl: './table.component.scss'
+	styleUrl: './table.component.css'
 })
 export class TableComponent {
-	@Input() public tableColumns: TableColumn[] = [];
-	@Input() public items = [{}];
-	@Input() public rowTemplate!: TemplateRef<any>;
+	public tableColumns = input<TableColumn[]>([]);
+  public items = input([{}]);
 
-	@ViewChild('pTable') public pTable!: Table;
+  // ngTemplateOutlet does not work with SignalInput
+	@Input() public rowTemplate!: TemplateRef<any>;
 }

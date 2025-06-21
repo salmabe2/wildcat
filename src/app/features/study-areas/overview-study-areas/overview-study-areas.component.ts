@@ -1,34 +1,35 @@
-import { StudyAreaService } from './../../../core/services/study-area.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { StudyAreaService } from '@wildcat/services';
 import { StudyArea } from '@wildcat/interfaces';
-import { TableComponent } from '@wildcat/shared/components';
 import { TableColumn } from '@wildcat/shared/interfaces';
+import { ButtonComponent } from '@wildcat/shared/components';
+import { TableComponent } from '@wildcat/shared/components';
 
 @Component({
-	selector: 'app-overview-study-areas',
-	standalone: true,
 	templateUrl: './overview-study-areas.component.html',
-	styleUrl: './overview-study-areas.component.scss',
-	imports: [TableComponent, CommonModule, RouterModule]
+	styleUrl: './overview-study-areas.component.css',
+	imports: [TableComponent, CommonModule, RouterModule],
 })
-export class OverviewStudyAreasComponent implements OnInit {
-	public studyAreas!: StudyArea[];
+export default class OverviewStudyAreasComponent implements OnInit {
+	private studyAreaService = inject(StudyAreaService);
 
-	public tableColumns: TableColumn[] = [
+	public studyAreas = signal<StudyArea[]>([]);
+
+	public tableColumns = signal<TableColumn[]>([
 		{ field: 'name', label: 'Nombre', sort: true },
 		{ field: 'presence', label: 'Presencia', sort: true },
-		{ field: 'num_cats', label: 'Núm. gatos', sort: true },
+		{ field: 'province', label: 'Provincia', sort: true },
 		{ field: 'region', label: 'Comunidad Autónoma', sort: true },
-		{ field: 'link', label: '' }
-  ];
-
-  constructor(private studyAreaService: StudyAreaService) {}
+		{ field: 'year', label: 'Año', sort: true },
+		{ field: 'partners', label: 'Colaboradores', sort: true },
+		{ field: 'leaderEmail', label: 'Contacto', sort: true },
+	]);
 
 	ngOnInit(): void {
-		this.studyAreas = this.studyAreaService.studyAreas;
+		this.studyAreas.set(this.studyAreaService.studyAreas);
 	}
 }

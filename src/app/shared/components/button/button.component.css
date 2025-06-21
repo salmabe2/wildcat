@@ -1,0 +1,32 @@
+p-button, a {
+	font-weight: 600;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+:host ::ng-deep .button--small {
+	padding: 0.2rem 0.5rem;
+	font-size: 0.875rem;
+}
+
+:host ::ng-deep .button--medium {
+	padding: 0.5rem 1.5rem;
+	font-size: 1rem;
+}
+
+:host :ng-deep .button--large {
+	padding: 0.75rem 1.5rem;
+	font-size: 1.125rem;
+}
+
+:host ::ng-deep .button--forest {
+	background-color: var(--color-forest);
+	border-color: var(--color-forest);
+	color: var(--color-white);
+}
+
+:host ::ng-deep .button--forest:hover {
+	background-color: var(--color-forest-2);
+	border-color: var(--color-forest-2);
+}

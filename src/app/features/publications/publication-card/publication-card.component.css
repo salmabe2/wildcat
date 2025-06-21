@@ -1,0 +1,67 @@
+::ng-deep .p-card {
+	height: 100%;
+	cursor: pointer;
+	transition: all 100ms ease-in-out;
+}
+
+::ng-deep .p-card:hover {
+	transform: scale(1.05);
+	border: 2px solid var(--color-forest-2);
+}
+
+::ng-deep .p-card:hover .p-card-title {
+	text-decoration: underline;
+}
+
+::ng-deep .p-card-header .no-img-video {
+	text-align: center;
+	padding: calc(var(--spacing) * 5);
+	background-color: var(--color-light);
+}
+
+::ng-deep .p-card-header .no-img-video i {
+	width: 10vw;
+	height: 10vw;
+	max-width: 150px;
+	max-height: 150px;
+	margin: 0 auto;
+	padding-left: 1vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-forest-1);
+	border-radius: calc(infinity * 1px);
+	transition: background-color 0.3s ease;
+}
+
+::ng-deep .p-card-header .no-img-video i::before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 3vw solid var(--color-light);
+	border-top: 1.7vw solid transparent;
+	border-bottom: 1.7vw solid transparent;
+}
+
+@media (min-width: 1800px) {
+	::ng-deep .p-card-header .no-img-video i::before {
+		border-left-width: 56px;
+		border-top-width: 30px;
+		border-bottom-width: 30px;
+	}
+}
+
+::ng-deep .p-card-content {
+	padding: 0;
+	flex-grow: 1;
+}
+
+::ng-deep .p-card-subtitle {
+	text-wrap: balance;
+}
+
+::ng-deep .p-card-footer {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
