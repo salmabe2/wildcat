@@ -20,11 +20,6 @@ export class HeaderComponent {
 			command: () => this.navigateToSection('about')
 		},
 		{
-			label: 'Colaboradores',
-			icon: 'pi pi-user',
-			routerLink: '/partners'
-		},
-		{
 			label: 'Áreas de estudio',
 			icon: 'pi pi-map-marker',
 			routerLink: '/study-areas'

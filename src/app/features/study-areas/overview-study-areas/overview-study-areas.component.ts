@@ -12,7 +12,7 @@ import { TableComponent } from '@wildcat/shared/components';
 @Component({
 	templateUrl: './overview-study-areas.component.html',
 	styleUrl: './overview-study-areas.component.css',
-	imports: [TableComponent, CommonModule, RouterModule, ButtonComponent],
+	imports: [TableComponent, CommonModule, RouterModule],
 })
 export default class OverviewStudyAreasComponent implements OnInit {
 	private studyAreaService = inject(StudyAreaService);

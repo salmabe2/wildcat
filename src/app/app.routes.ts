@@ -13,28 +13,24 @@ export const routes: Routes = [
 				loadComponent: () =>
 					import(
 						'./features/publications/overview-publications/overview-publications.component'
-					)
+					),
 			},
 			{
 				path: 'study-areas',
 				loadComponent: () =>
 					import(
 						'./features/study-areas/overview-study-areas/overview-study-areas.component'
-					)
-			},
-			{
-				path: 'partners',
-				loadComponent: () => import('./features/partners/partners.component')
+					),
 			},
 			{
 				path: '**',
-				redirectTo: '/home'
-			}
-		]
+				redirectTo: '/home',
+			},
+		],
 	},
 	{
 		path: '**',
 		redirectTo: 'home',
-		pathMatch: 'full'
-	}
+		pathMatch: 'full',
+	},
 ];
