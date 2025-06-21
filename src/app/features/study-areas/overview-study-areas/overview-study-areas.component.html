@@ -1,28 +1,38 @@
 <h1 class="my-4 text-3xl font-bold">Áreas de Estudio</h1>
 
+<p-tabMenu
+	styleClass="mb-4"
+	[model]="tabMenu()"
+	[activeItem]="tabMenu()[0]"
+	(activeItemChange)="setTab($event)">
+</p-tabMenu>
 <div>
-	<ui-table
-		[tableColumns]="tableColumns()"
-		[items]="studyAreas()"
-		[rowTemplate]="rowTemplate">
-		<ng-template
-			#rowTemplate
-			let-studyArea>
-			<tr>
-				<td>{{ studyArea.name }}</td>
-				<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
-				<td>{{ studyArea.province }}</td>
-				<td>{{ studyArea.region }}</td>
-				<td>{{ studyArea.year }}</td>
-				<td>
-					<ul>
-						@for (partner of studyArea.partners; track partner) {
-							<li>{{ partner }}</li>
-						}
-					</ul>
-				</td>
-				<td>{{ studyArea.leaderEmail }}</td>
-			</tr>
-		</ng-template>
-	</ui-table>
+	@if (activeTab === 'table') {
+		<ui-table
+			[tableColumns]="tableColumns()"
+			[items]="studyAreas()"
+			[rowTemplate]="rowTemplate">
+			<ng-template
+				#rowTemplate
+				let-studyArea>
+				<tr>
+					<td>{{ studyArea.name }}</td>
+					<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
+					<td>{{ studyArea.province }}</td>
+					<td>{{ studyArea.region }}</td>
+					<td>{{ studyArea.year }}</td>
+					<td>
+						<ul>
+							@for (partner of studyArea.partners; track partner) {
+								<li>{{ partner }}</li>
+							}
+						</ul>
+					</td>
+					<td>{{ studyArea.leaderEmail }}</td>
+				</tr>
+			</ng-template>
+		</ui-table>
+	} @else {
+		<app-map />
+	}
 </div>
