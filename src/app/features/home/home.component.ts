@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { Publication } from '@wildcat/interfaces';
 import { PublicationService } from '@wildcat/services';
+import { ButtonComponent } from '@wildcat/shared/components';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
 import { PublicationCardComponent } from '../publications/publication-card/publication-card.component';
 @Component({
@@ -11,19 +12,19 @@ import { PublicationCardComponent } from '../publications/publication-card/publi
 		CommonModule,
 		RouterModule,
 
+		ButtonComponent,
 		HeaderComponent,
-		PublicationCardComponent
+		PublicationCardComponent,
 	],
 	templateUrl: './home.component.html',
-	styleUrl: './home.component.scss'
+	styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  public recentPosts!: Publication[];
+	private route = inject(ActivatedRoute);
+	private publicationService = inject(PublicationService);
 
-	constructor(
-		private route: ActivatedRoute,
-		private publicationService: PublicationService
-	) {}
+	public recentPosts = signal<Publication[]>([]);
+	public transparentHeader = signal<boolean>(true);
 
 	ngOnInit(): void {
 		/* Scroll to about us info */
@@ -36,6 +37,13 @@ export class HomeComponent implements OnInit {
 			}
 		});
 
-		this.recentPosts = this.publicationService.getRecentPublications(3);
+		this.recentPosts.set(this.publicationService.getRecentPublications(3));
+	}
+
+	onScroll(event: Event) {
+		const target = event.target as HTMLElement; // Cast event target to HTMLElement
+		const scrollTopPosition = target.scrollTop; // Get the scroll position
+
+		this.transparentHeader.set(scrollTopPosition === 0);
 	}
 }

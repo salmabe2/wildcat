@@ -19,9 +19,14 @@ export const appConfig: ApplicationConfig = {
 				preset: customPreset,
 				options: {
 					prefix: 'p',
-					darkModeSelector: '',
+          darkModeSelector: '',
+          cssLayer: {
+            name: 'primeng',
+            order: 'theme, base, primeng'
+          }
 				}
 			}
-		})
+    }),
+
 	]
 };

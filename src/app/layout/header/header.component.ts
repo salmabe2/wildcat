@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
@@ -8,19 +8,16 @@ import { Menubar } from 'primeng/menubar';
 	selector: 'app-header',
 	imports: [RouterModule, Menubar],
 	templateUrl: './header.component.html',
-	styleUrl: './header.component.scss'
+	styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-	public items: MenuItem[] = [
+	private router = inject(Router);
+
+	public items = signal<MenuItem[]>([
 		{
 			label: 'Sobre el proyecto',
 			icon: 'pi pi-info-circle',
 			command: () => this.navigateToSection('about')
-		},
-		{
-			label: 'Colaboradores',
-			icon: 'pi pi-user',
-			routerLink: '/partners'
 		},
 		{
 			label: 'Áreas de estudio',
@@ -32,13 +29,11 @@ export class HeaderComponent {
 			icon: 'pi pi-file',
 			routerLink: '/publications'
 		}
-	];
+	]);
 
-	@Input() public transparent: boolean = false;
-
-	constructor(private router: Router) {}
+	public transparent = input<boolean>(false);
 
 	navigateToSection(fragment: string): void {
-		this.router.navigate(['/'], { fragment });
+		this.router.navigate(['/home'], { fragment });
 	}
 }

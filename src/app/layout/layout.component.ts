@@ -6,6 +6,6 @@ import { HeaderComponent } from './header/header.component';
 @Component({
     imports: [RouterOutlet, HeaderComponent],
     templateUrl: './layout.component.html',
-    styleUrl: './layout.component.scss'
+    styleUrl: './layout.component.css'
 })
 export default class LayoutComponent {}
