@@ -11,21 +11,17 @@
 			<tr>
 				<td>{{ studyArea.name }}</td>
 				<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
-				<td>{{ studyArea.num_cats }}</td>
+				<td>{{ studyArea.province }}</td>
 				<td>{{ studyArea.region }}</td>
+				<td>{{ studyArea.year }}</td>
 				<td>
-					<!-- <a
-						class="button"
-						[href]="studyArea.link"
-						target="_blank"
-						rel="noopener noreferrer">
-						Ver
-					</a> -->
-					<ui-button
-						label="Ver"
-						[externalLink]="studyArea.link"
-						size="small" />
+					<ul>
+						@for (partner of studyArea.partners; track partner) {
+							<li>{{ partner }}</li>
+						}
+					</ul>
 				</td>
+				<td>{{ studyArea.leaderEmail }}</td>
 			</tr>
 		</ng-template>
 	</ui-table>
