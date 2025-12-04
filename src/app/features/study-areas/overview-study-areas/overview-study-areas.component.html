@@ -6,7 +6,21 @@
 	[activeItem]="tabMenu()[0]"
 	(activeItemChange)="setTab($event)">
 </p-tabMenu>
-<div>
+<div class="mb-2">
+	<p-message
+		severity="secondary"
+		styleClass="mb-2">
+		Si no ves tu nombre o tu bloque, rellena la siguiente información en el
+		siguiente
+		<a
+			class="ml-1 text-primary underline"
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://docs.google.com/forms/d/1PjXjm5XbpSuAo_ZW7hKcq6jcV1XjtbJJekzSS3LzuJE/preview">
+			enlace
+		</a>
+		.
+	</p-message>
 	@if (activeTab === 'table') {
 		<ui-table
 			[tableColumns]="tableColumns()"

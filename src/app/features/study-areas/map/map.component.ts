@@ -17,34 +17,11 @@ export default class MapComponent implements AfterViewInit {
 	ngAfterViewInit() {
 		this.map = L.map('map').setView([40.4168, -3.7038], 6); // Center on Spain
 
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 			attribution: '© OpenStreetMap contributors',
 		}).addTo(this.map);
 
-		// TODO: wait for coords data
-    // const locations = this.studyAreaService.studyAreas;
-
-		const locations = [
-			{
-				leader: 'Loreto García Román',
-				coords: [40.4168, -3.7038],
-				name: 'Parque Regional del Sureste',
-				year: '2024',
-				months: 'Abril-junio',
-				otherName: '',
-				province: 'Madrid',
-				region: 'Madrid',
-				presence: false,
-				partners: [
-					'Loreto García Román',
-					'Felipe Peñalosa García',
-					'Félix Martínez Olivas',
-					'Jorge Calero Ramírez',
-				],
-				leaderEmail: 'lorejaruco@gmail.com',
-				photos: '',
-			},
-		];
+    const locations = this.studyAreaService.studyAreas;
 
 		locations.forEach((loc) => {
 			L.marker(loc.coords as [number, number]).addTo(this.map).bindPopup(`

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { TabMenu } from 'primeng/tabmenu';
 import { MenuItem } from 'primeng/api';
+import { MessageModule } from 'primeng/message';
 
 import { StudyAreaService } from '@wildcat/services';
 import { StudyArea } from '@wildcat/interfaces';
@@ -16,7 +17,14 @@ import MapComponent from '../map/map.component';
 @Component({
 	templateUrl: './overview-study-areas.component.html',
 	styleUrl: './overview-study-areas.component.css',
-	imports: [TableComponent, CommonModule, RouterModule, TabMenu, MapComponent],
+	imports: [
+		TableComponent,
+		CommonModule,
+		RouterModule,
+		TabMenu,
+		MapComponent,
+		MessageModule,
+	],
 })
 export default class OverviewStudyAreasComponent implements OnInit {
 	private studyAreaService = inject(StudyAreaService);
