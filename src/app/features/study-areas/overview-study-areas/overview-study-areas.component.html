@@ -1,28 +1,52 @@
 <h1 class="my-4 text-3xl font-bold">Áreas de Estudio</h1>
 
-<div>
-	<ui-table
-		[tableColumns]="tableColumns()"
-		[items]="studyAreas()"
-		[rowTemplate]="rowTemplate">
-		<ng-template
-			#rowTemplate
-			let-studyArea>
-			<tr>
-				<td>{{ studyArea.name }}</td>
-				<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
-				<td>{{ studyArea.province }}</td>
-				<td>{{ studyArea.region }}</td>
-				<td>{{ studyArea.year }}</td>
-				<td>
-					<ul>
-						@for (partner of studyArea.partners; track partner) {
-							<li>{{ partner }}</li>
-						}
-					</ul>
-				</td>
-				<td>{{ studyArea.leaderEmail }}</td>
-			</tr>
-		</ng-template>
-	</ui-table>
+<p-tabMenu
+	styleClass="mb-4"
+	[model]="tabMenu()"
+	[activeItem]="tabMenu()[0]"
+	(activeItemChange)="setTab($event)">
+</p-tabMenu>
+<div class="mb-2">
+	<p-message
+		severity="secondary"
+		styleClass="mb-2">
+		Si no ves tu nombre o tu bloque, rellena la siguiente información en el
+		siguiente
+		<a
+			class="ml-1 text-primary underline"
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://docs.google.com/forms/d/1PjXjm5XbpSuAo_ZW7hKcq6jcV1XjtbJJekzSS3LzuJE/preview">
+			enlace
+		</a>
+		.
+	</p-message>
+	@if (activeTab === 'table') {
+		<ui-table
+			[tableColumns]="tableColumns()"
+			[items]="studyAreas()"
+			[rowTemplate]="rowTemplate">
+			<ng-template
+				#rowTemplate
+				let-studyArea>
+				<tr>
+					<td>{{ studyArea.name }}</td>
+					<td>{{ studyArea.presence ? 'Sí' : 'No' }}</td>
+					<td>{{ studyArea.province }}</td>
+					<td>{{ studyArea.region }}</td>
+					<td>{{ studyArea.year }}</td>
+					<td>
+						<ul>
+							@for (partner of studyArea.partners; track partner) {
+								<li>{{ partner }}</li>
+							}
+						</ul>
+					</td>
+					<td>{{ studyArea.leaderEmail }}</td>
+				</tr>
+			</ng-template>
+		</ui-table>
+	} @else {
+		<app-map />
+	}
 </div>

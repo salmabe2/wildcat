@@ -26,7 +26,7 @@ const customPreset = definePreset(Aura, {
 			},
 		},
 		tabs: {
-			tabPadding: '1rem',
+			tabPadding: '0.5rem 1rem',
 			tabActiveColor: '#059669',
 			tabActiveBorderColor: '#059669',
 		},
