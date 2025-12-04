@@ -4,6 +4,12 @@ import { StudyAreaService } from '@wildcat/services';
 
 import * as L from 'leaflet';
 
+L.Icon.Default.mergeOptions({
+	iconUrl: 'assets/markers/marker-icon.png',
+	iconRetinaUrl: 'assets/markers/marker-icon-2x.png',
+	shadowUrl: 'assets/markers/marker-shadow.png',
+});
+
 @Component({
 	selector: 'app-map',
 	imports: [CommonModule],
@@ -17,11 +23,14 @@ export default class MapComponent implements AfterViewInit {
 	ngAfterViewInit() {
 		this.map = L.map('map').setView([40.4168, -3.7038], 6); // Center on Spain
 
-		L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-			attribution: '© OpenStreetMap contributors',
-		}).addTo(this.map);
+		L.tileLayer(
+			'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+			{
+				attribution: '© OpenStreetMap contributors',
+			},
+		).addTo(this.map);
 
-    const locations = this.studyAreaService.studyAreas;
+		const locations = this.studyAreaService.studyAreas;
 
 		locations.forEach((loc) => {
 			L.marker(loc.coords as [number, number]).addTo(this.map).bindPopup(`
