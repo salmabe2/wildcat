@@ -1,15 +1,16 @@
 export interface StudyArea {
-	contact?: string;
+  contact?: string;
+  coords?: number[];
 	link?: string;
 	months?: string;
-	partners?: string[];
+	partners: string[]; // Colaboradores
 	presence: boolean;
-	province: string;
-	region: string;
+	province: string; // Provincia
+	region: string; // Comunidad Autónoma
 	year?: string;
 	leader: string;
 	name: string;
-	otherName: string;
-	leaderEmail: string;
+	otherName?: string;
+	leaderEmail: string; // Email de contacto
 	photos?: string;
 }
