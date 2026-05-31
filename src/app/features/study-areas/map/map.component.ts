@@ -33,12 +33,26 @@ export default class MapComponent implements AfterViewInit {
 		const locations = this.studyAreaService.studyAreas;
 
 		locations.forEach((loc) => {
+			const yearHTML = loc.year
+				? `<p><strong>Año:</strong> ${loc.year}</p>`
+				: '';
+
+			const partnersHTML =
+				loc.partners && loc.partners.length > 0
+					? `<p><strong>Colaboradores:</strong> ${loc.partners.join(', ')}</p>`
+					: '';
+
+			const contactHTML = loc.leaderEmail
+				? `<p><strong>Contacto:</strong> <a href="mailto:${loc.leaderEmail}">${loc.leaderEmail}</a></p>`
+				: '';
+
 			L.marker(loc.coords as [number, number]).addTo(this.map).bindPopup(`
-          <h3>${loc.name}</h3>
-          <p><strong>Presencia:</strong> ${loc.presence ? 'Sí' : 'No'}</p>
-          <p><strong>Año:</strong> ${loc.year} </p>
-          <p><strong>Colaboradores:</strong> ${loc.partners.join(', ')}</p>
-          <p><strong>Contacto:</strong> <a href="mailto:${loc.leaderEmail}">${loc.leaderEmail}</a></p>          `);
+      <h3>${loc.name}</h3>
+      <p><strong>Presencia:</strong> ${loc.presence ? 'Sí' : 'No'}</p>
+      ${yearHTML}
+      ${partnersHTML}
+      ${contactHTML}
+    `);
 		});
 	}
 }
